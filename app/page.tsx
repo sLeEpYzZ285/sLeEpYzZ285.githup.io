@@ -297,7 +297,7 @@ export default function Home() {
           <div className="grid grid-cols-12 mt-10 gap-3 ">
             <Card
               shadow="sm"
-              className="h-full col-span-12 sm:col-span-2"
+              className="h-full col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
               isPressable
               onPress={() => console.log("item pressed")}
             >
@@ -344,7 +344,7 @@ export default function Home() {
         <div className="grid grid-cols-12 grid-flow-row grid-rows-1 mt-10 gap-3 ">
           <Card
             shadow="sm"
-            className="h-full col-span-12 sm:col-span-2"
+            className="h-full col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
             isPressable
             onPress={() => console.log("item pressed")}
           >
@@ -391,7 +391,7 @@ export default function Home() {
         <div className="grid grid-cols-12 mt-10 gap-3 ">
           <Card
             shadow="sm"
-            className="h-full col-span-12 sm:col-span-2"
+            className="h-full col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
             isPressable
             onPress={() => console.log("item pressed")}
           >
