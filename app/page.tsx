@@ -84,28 +84,28 @@ export default function Home() {
             <div className="partner_logo flex flex-row items-center justify-around mt-5 py-4 gap-6 overflow-hidden dark:bg-zinc-900 ">
               <Image
                 className="me-8"
-                src={"/logo/Acer-Logo.svg"}
+                src={"logo/Acer-Logo.svg"}
                 alt="asuslogo"
                 width={180}
                 height={80}
               />
               <Image
                 className="me-8"
-                src={"/logo/Asus-Logo.svg"}
+                src={"logo/Asus-Logo.svg"}
                 alt="asuslogo"
                 width={150}
                 height={80}
               />
               <Image
                 className="me-8"
-                src={"/logo/HP-Logo.svg"}
+                src={"logo/HP-Logo.svg"}
                 alt="asuslogo"
                 width={150}
                 height={60}
               />
               <Image
                 className="me-8"
-                src={"/logo/Lenovo-Logo.svg"}
+                src={"logo/Lenovo-Logo.svg"}
                 alt="asuslogo"
                 width={160}
                 height={80}
@@ -140,7 +140,7 @@ export default function Home() {
             <div className="col-span-12 sm:col-span-5 ">
               <Fade triggerOnce>
                 <Image
-                  src={"/photo/promotion_1.jpg"}
+                  src={"photo/promotion_1.jpg"}
                   alt="asuslogo"
                   width={500}
                   height={800}
