@@ -52,7 +52,7 @@ export default function AboutPage() {
               removeWrapper
               alt="Card background"
               className="  w-full h-full overflow-hidden !rounded-t-full !shadow-primary-50  object-cover "
-              src="sLeEpYzZ285.githup.io/photo/rayong_oa_main.jpg"
+              src="photo/rayong_oa_main.jpg"
             />
             </Slide>
           </div>
@@ -78,7 +78,7 @@ export default function AboutPage() {
               removeWrapper
               alt="Card background"
               className="z-0 w-full h-full object-cover"
-              src="sLeEpYzZ285.githup.io/photo/rayong_oa_inside.jpg"
+              src="photo/rayong_oa_inside.jpg"
             />
             </Slide>
           </div>
