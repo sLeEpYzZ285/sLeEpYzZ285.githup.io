@@ -208,7 +208,7 @@ export default function Content() {
       </section>
 
       <section>
-      <h1 className="text-4xl font-semibold mb-5">เสปค</h1>
+      <h1 className="text-4xl font-semibold mb-5">สเปค</h1>
         <ProppertiesTable />
 
         <div className="mt-5"></div>
