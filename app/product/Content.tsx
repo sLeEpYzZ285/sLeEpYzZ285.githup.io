@@ -239,7 +239,7 @@ export default function Content() {
           </AccordionItem>
           <AccordionItem
             key="2"
-            aria-label="สเปค"
+            aria-label="spec"
             title={<h1 className="text-4xl font-semibold">สเปค</h1>}
           >
             <div className="mt-5"></div>
