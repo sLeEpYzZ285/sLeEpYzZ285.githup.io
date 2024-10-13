@@ -18,7 +18,7 @@ export default function CardProduct({data}:{data:product_type}) {
         </div>
       </CardBody>
       <CardHeader className=" p-4 flex-col items-start">
-        <p className="text-tiny uppercase font-bold !h-7 text-clip overflow-hidden te">{data.name}</p>
+        <p className="text-tiny uppercase font-bold !h-8 text-clip overflow-hidden ">{data.name}</p>
         <small className="text-default-500 mt-3 mb-2">สินค้าคงเหลือ {data.stock} ชิ้น</small>
         <h4 className="font-bold text-large ">฿{data.price.toLocaleString()}</h4>
       </CardHeader>
