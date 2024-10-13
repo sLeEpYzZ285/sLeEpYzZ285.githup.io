@@ -117,7 +117,7 @@ export default function Home() {
           </Zoom>
 
           <div className="grid grid-cols-12 mt-10 gap-6">
-            <div className="col-span-12 md:col-span-7">
+            <div className="col-span-12 lg:col-span-6">
               {products.slice(0, 3).map((data, i) => (
                 <JackInTheBox triggerOnce key={data.id}>
                   <Link
@@ -129,14 +129,16 @@ export default function Home() {
                 </JackInTheBox>
               ))}
             </div>
-            <div className="col-span-12 md:col-span-5 flex justify-center">
+            <div className="col-span-12 lg:col-span-6 flex justify-center">
               <Fade triggerOnce className="">
                 <Image
-                  src={"photo/promotion_1.jpg"}
+                // isBlurred
+       
+                  src={"https://i.pinimg.com/originals/07/d3/e3/07d3e303ca0b026f80e2ca7640504501.jpg"}
                   alt="asuslogo"
                   width={500}
                   height={800}
-                  className=" mx-auto rounded-xl  !w-full !h-full m-0"
+                  className="  mx-auto rounded-xl  overflow-hidden object-cover  !w-full!    m-0"
                 />
               </Fade>
             </div>

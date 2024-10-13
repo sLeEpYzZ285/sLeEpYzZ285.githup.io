@@ -49,7 +49,7 @@ export default function Footer() {
           <div className="col-span-12 h-[2px] bg-primary-100 w-full mt-24 mb-8   "></div>
           <div className="LOGO text-center block col-span-12 xl:col-span-2 xl:flex gap-4">
             <div className=" flex text-center justify-center -mt-32 mb-4 xl:my-0">
-              <div className=" bg-white shadow-lg shadow-primary-100 rounded-full p-4 w-32 h-32 object-center flex justify-center items-center">
+              <div className="   p-4 w-32 h-32 object-center flex justify-center items-center">
                 {/* <svg
                   width="100"
                   height="100"
@@ -94,16 +94,16 @@ export default function Footer() {
                     fill="#3887FD"
                   />
                 </svg> */}
-                <NewLogo />
-                {/* <Image
+                {/* <NewLogo /> */}
+                <Image
                   src={
-                    "https://rayong-oa.com/wp-content/uploads/2019/04/Logo-ROA.png"
+                    "logo/rayong_oa_newlogo.png"
                   }
                   width={100}
                   height={100}
                   alt="RayongOA Logo"
-                  className=""
-                /> */}
+                  className=" drop-shadow-xl "
+                />
               </div>
             </div>
           </div>

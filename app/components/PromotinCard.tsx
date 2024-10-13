@@ -16,6 +16,7 @@ export default function PromotionCard() {
         <h4 className="text-white font-medium text-large">Stream the Acme event</h4> */}
         </CardHeader>
         <Image
+        isZoomed
           removeWrapper
           alt="Card background"
           className="z-0 w-full h-full object-cover"
@@ -32,6 +33,7 @@ export default function PromotionCard() {
           </h4>
         </CardHeader>
         <Image
+          isZoomed
           removeWrapper
           alt="Card background"
           className="z-0 w-full h-full object-cover"
@@ -48,7 +50,9 @@ export default function PromotionCard() {
           </h4>
         </CardHeader>
         <Image
+          isZoomed
           removeWrapper
+          
           alt="Card background"
           className="z-0 w-full h-full object-cover"
           src="https://cdn.thewirecutter.com/wp-content/media/2024/08/laserprinters-2048px-02603-2x1-1.jpg?width=2048&quality=75&crop=2:1&auto=webp"
