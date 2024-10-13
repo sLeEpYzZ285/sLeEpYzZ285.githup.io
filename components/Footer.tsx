@@ -94,7 +94,7 @@ export default function Footer() {
                     fill="#3887FD"
                   />
                 </svg> */}
-                <NewLogo/>
+                <NewLogo />
                 {/* <Image
                   src={
                     "https://rayong-oa.com/wp-content/uploads/2019/04/Logo-ROA.png"
@@ -116,19 +116,18 @@ export default function Footer() {
           <div className="col-span-12 md:col-span-6 lg:col-span-2">
             <h3 className="text-xl font-bold mb-2">{footer?.site_map_title}</h3>
             <div className="flex flex-wrap gap-2">
-              
-                {siteConfig.navItems.map((data, index) => (
-                  <NextLink key={index} href={data.href} className="">
-                    <Chip
-                      className=" text-blue-600 hover:text-blue-800 cursor-pointer "
-                      variant="flat"
-                      color={"primary"}
-                    >
-                      {data.label}
-                    </Chip>
-                  </NextLink>
-                ))}
-              
+              {siteConfig.navItems.map((data, index) => (
+                <NextLink key={index} href={data.href} className="">
+                  <Chip
+                    className=" text-blue-600 hover:text-blue-800 cursor-pointer "
+                    variant="flat"
+                    color={"primary"}
+                  >
+                    {data.label}
+                  </Chip>
+                </NextLink>
+              ))}
+
               {/* {siteConfig.navItems.map((item, index) => (
               <Chip
                 key={item.href}
@@ -158,25 +157,31 @@ export default function Footer() {
           </div>
           <div className="col-span-12 md:col-span-6 lg:col-span-4">
             <h3 className="text-xl font-bold mb-2 ">{footer?.contact.title}</h3>
-            {/* <div className="flex mb-2">
-            <Link
-              isExternal
-              className="flex items-center gap-1 text-current"
-              href="https://www.facebook.com/profile.php?id=100063476143057"
-              title="natachat fanpage"
-            >
-              <div className="me-4 bg-white p-1 rounded-full">
-                <svg fill="#006FEE" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" /></svg>
-              </div>
-              <p className="">{footer?.contact.facebook}</p>
-            </Link>
-
-          </div> */}
             <div className="flex mb-2">
               <Link
                 isExternal
                 className="flex items-center gap-1 text-current"
-                href="https://line.me/R/ti/p/%40packzone"
+                href="https://www.facebook.com/rayongoaandservice?mibextid=ZbWKwL"
+                title="natachat fanpage"
+              >
+                <div className="me-4 bg-white p-1 rounded-full">
+                  <svg
+                    fill="#006FEE"
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="1em"
+                    viewBox="0 0 512 512"
+                  >
+                    <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+                  </svg>
+                </div>
+                <p className="">{footer?.contact.facebook}</p>
+              </Link>
+            </div>
+            <div className="flex mb-2">
+              <Link
+                isExternal
+                className="flex items-center gap-1 text-current"
+                href="https://liff.line.me/1645278921-kWRPP32q/?accountId=rayongoa"
                 title="natachat lineadd"
               >
                 <div className="me-4 bg-white p-1 rounded-full">
