@@ -27,6 +27,7 @@ import {
   Logo,
 } from "@/components/icons";
 import Image from "next/image";
+import {NewLogoLanscape} from "./NewLogo";
 
 export const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false)
@@ -57,8 +58,9 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
+          <NewLogoLanscape/>
             {/* <Logo /> */}
-            <Image
+            {/* <Image
                 src={
                   "https://rayong-oa.com/wp-content/uploads/2019/04/Logo-ROA.png"
                 }
@@ -66,8 +68,8 @@ export const Navbar = () => {
                 height={70}
                 alt="RayongOA Logo"
                 className=""
-              />
-            <p className="font-bold text-xl">Rayong OA</p>
+              /> */}
+            {/* <p className="font-bold text-xl">Rayong OA</p> */}
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">

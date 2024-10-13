@@ -8,12 +8,12 @@ export default function AboutPage() {
     <>
       <section className="h-auto md:h-[90vh] flex flex-col items-center justify-center">
         <div className="grid grid-cols-12 gap-5 justify-between">
-          <div className="col-span-12 md:col-span-6 flex flex-col mb-4">
+          <div className="col-span-12  lg:col-span-6 flex flex-col mb-4">
             <Slide triggerOnce cascade>
             <h1
               className={`${title({
                 color: "blue",
-              })} !text-5xl md:!text-8xl  !font-extrabold`}
+              })} !text-5xl md:!text-8xl  !font-extrabold !text-nowrap`}
             >
               RAYONG OA
             </h1>
@@ -31,7 +31,7 @@ export default function AboutPage() {
                 สินค้ามากมายจาก{" "}
                 <span className=" text-primary">
                   {" "}
-                  “ ระยอง โอเอ แอนเซอวิส “{" "}
+                  “ ระยอง โอเอ แอนด์ เซอร์วิส “{" "}
                 </span>{" "}
                 ที่คัดสรรสินค้าคุณภาพเหนือกว่า
                 พร้อมตอบโจทย์ทุกความต้องการทางเทคโนโลยี ครบเครื่องเรื่องอุปกรณ์
@@ -44,7 +44,7 @@ export default function AboutPage() {
               </JackInTheBox>
             </div>
           </div>
-          <div className="col-span-12 md:col-span-6 ">
+          <div className="col-span-12 lg:col-span-6 ">
             <Slide triggerOnce direction="up">
             <Image
             shadow="lg"
@@ -97,7 +97,7 @@ export default function AboutPage() {
                 จากบริษัทธุรกิจไอทีชั้นนำในยุคนั้น
               </p>
               <br />
-              <span className="mt-8">
+              {/* <span className="mt-8">
                 <h3 className="mb-2">
                   ปัจจุบันบริษัท ระยอง โอเอ แอนด์ เซอร์วิส จำกัด มีทั้งหมด 1
                   สาขา
@@ -109,7 +109,7 @@ export default function AboutPage() {
                   จ.ระยอง
                   </p>
                 </li>
-              </span>
+              </span> */}
         
             </Slide>
           </div>

@@ -7,6 +7,7 @@ import NextLink from "next/link";
 // import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import NewLogo from "./NewLogo";
 // import { Locale } from "@/i18n/config";
 // import { useNavbarContext } from "@/app/Context/NavbarContext";
 const footer = {
@@ -34,7 +35,6 @@ export default function Footer() {
 
   return (
     <div className="w-full ">
-     
       <div
         className="container flex 
       items-center justify-center 
@@ -46,11 +46,11 @@ export default function Footer() {
         // shadow-lg   shadow-blue-500/50 bg-primary bg-gradient-to-r from-[#0E8BFF] to-[#006FEE]  text-white
       >
         <div className="grid grid-cols-12 max-w-7xl gap-6">
-        <div className="col-span-12 h-[2px] bg-primary-100 w-full mt-24 mb-8   "></div>
+          <div className="col-span-12 h-[2px] bg-primary-100 w-full mt-24 mb-8   "></div>
           <div className="LOGO text-center block col-span-12 xl:col-span-2 xl:flex gap-4">
             <div className=" flex text-center justify-center -mt-32 mb-4 xl:my-0">
               <div className=" bg-white shadow-lg shadow-primary-100 rounded-full p-4 w-32 h-32 object-center flex justify-center items-center">
-                <svg
+                {/* <svg
                   width="100"
                   height="100"
                   viewBox="0 0 335 210"
@@ -93,8 +93,9 @@ export default function Footer() {
                     d="M0 92.9807V126.089L62.9773 63.1117L46.8244 46.1562L0 92.9807ZM40.773 39.8041L0 80.5772V43.3666L22.6188 20.7478L40.773 39.8041ZM16.5674 14.3957L3.44807 0.624501C2.20286 -0.682586 0 0.198746 0 2.00402V30.9632L16.5674 14.3957ZM72.3231 78.5729L2.9031 147.993L21.0573 167.049L72.3231 115.783V78.5729ZM72.3231 128.187L27.1087 173.401L33.1601 179.753L72.3231 140.59V128.187ZM72.3231 152.994L39.2115 186.105L43.2616 190.357L72.3231 161.295V152.994ZM72.3231 186.102L55.3644 203.061L61.4158 209.413L72.3231 198.506V186.102Z"
                     fill="#3887FD"
                   />
-                </svg>
-                <Image
+                </svg> */}
+                <NewLogo/>
+                {/* <Image
                   src={
                     "https://rayong-oa.com/wp-content/uploads/2019/04/Logo-ROA.png"
                   }
@@ -102,7 +103,7 @@ export default function Footer() {
                   height={100}
                   alt="RayongOA Logo"
                   className=""
-                />
+                /> */}
               </div>
             </div>
           </div>
@@ -115,15 +116,19 @@ export default function Footer() {
           <div className="col-span-12 md:col-span-6 lg:col-span-2">
             <h3 className="text-xl font-bold mb-2">{footer?.site_map_title}</h3>
             <div className="flex flex-wrap gap-2">
-              <div className="">
-                <Chip
-                  className=" text-blue-600 hover:text-blue-200 cursor-pointer"
-                  variant="flat"
-                  color={"primary"}
-                >
-                  protae
-                </Chip>
-              </div>
+              
+                {siteConfig.navItems.map((data, index) => (
+                  <NextLink key={index} href={data.href} className="">
+                    <Chip
+                      className=" text-blue-600 hover:text-blue-800 cursor-pointer "
+                      variant="flat"
+                      color={"primary"}
+                    >
+                      {data.label}
+                    </Chip>
+                  </NextLink>
+                ))}
+              
               {/* {siteConfig.navItems.map((item, index) => (
               <Chip
                 key={item.href}
@@ -226,10 +231,11 @@ export default function Footer() {
           <div className="col-span-12 flex  justify-center sm:justify-center">
             <hr />
             <p className="text-center">
-              ©{year} ALL RIGHTS RESERVED |{" "}
+              ©{year} ALL RIGHTS RESERVED
+              {/* |{" "}
               <Link href="/terms" isExternal className="  transition-all">
                 Hosted & Developed by ProXtae Production
-              </Link>
+              </Link> */}
             </p>
           </div>
         </div>
