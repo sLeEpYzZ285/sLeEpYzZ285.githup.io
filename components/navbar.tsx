@@ -8,7 +8,7 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { Button } from "@nextui-org/button";
+import { Button  } from "@nextui-org/button";
 import { Kbd } from "@nextui-org/kbd";
 import { Link } from "@nextui-org/link";
 import { Input } from "@nextui-org/input";
@@ -26,8 +26,10 @@ import {
   SearchIcon,
   Logo,
 } from "@/components/icons";
-import Image from "next/image";
+// import Image from "next/image";
 import {NewLogoLanscape} from "./NewLogo";
+import { Image } from "@nextui-org/react";
+import ModalContact from "./ContactButton/ModalContact";
 
 export const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false)
@@ -58,7 +60,7 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-          <NewLogoLanscape/>
+          <Image className="w-48 mx-auto"   src="logo/rayong_oa_newlogo2.png"/>
             {/* <Logo /> */}
             {/* <Image
                 src={
@@ -72,7 +74,7 @@ export const Navbar = () => {
             {/* <p className="font-bold text-xl">Rayong OA</p> */}
           </NextLink>
         </NavbarBrand>
-        <ul className="hidden lg:flex gap-4 justify-start ml-2">
+        <ul className="hidden md:flex gap-4 justify-start ml-2">
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
               <NextLink
@@ -94,7 +96,7 @@ export const Navbar = () => {
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
-        <NavbarItem className="hidden sm:flex gap-2">
+        <NavbarItem className="hidden md:flex gap-2">
           {/* <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
             <TwitterIcon className="text-default-500" />
           </Link>
@@ -108,7 +110,8 @@ export const Navbar = () => {
         </NavbarItem>
         {/* <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem> */}
         <NavbarItem className="hidden md:flex">
-          <Button
+          <ModalContact text="ติดต่อเรา"/>
+          {/* <Button
             // isExternal
             // as={Link}
             className="text-sm font-normal text-default-600 bg-default-100"
@@ -117,11 +120,11 @@ export const Navbar = () => {
             variant="flat"
           >
             ติดต่อเรา
-          </Button>
+          </Button> */}
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
+      <NavbarContent className="md:hidden basis-1 pl-4" justify="end">
         {/* <Link isExternal aria-label="Github" href={siteConfig.links.github}>
           <GithubIcon className="text-default-500" />
         </Link> */}
@@ -130,7 +133,7 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarMenu>
-        {searchInput}
+        {/* {searchInput} */}
         <div className="mx-4 mt-2 flex flex-col gap-2">
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
@@ -150,6 +153,7 @@ export const Navbar = () => {
             </NavbarMenuItem>
           ))}
         </div>
+        <ModalContact text="ติดต่อเรา"/>
       </NavbarMenu>
     </NextUINavbar>
   );

@@ -6,7 +6,7 @@ import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
 export default function CardProduct({data}:{data:product_type}) {
   return (
    
-    <Card className=" mx-w-[350px] shadow-normal hover:shadow-primary-50 hover:shadow-xl scale-100 hover:scale-[1.02] transition-all">
+    <Card className=" mx-w-[350px] min-w-[150px] shadow-normal hover:shadow-primary-50 hover:shadow-xl scale-100 hover:scale-[1.02] transition-all">
       <CardBody className="overflow-visible ">
         <div className="rounded-xl flex justify-center  bg-white">
         <Image

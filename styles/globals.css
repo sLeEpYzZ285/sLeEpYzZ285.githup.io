@@ -63,6 +63,9 @@ html {
     background-color: #006FEE;
     border-radius: 20px;
   }
+  *::-webkit-scrollbar-thumb:hover {
+    cursor: pointer; 
+  }
 
   iframe .ytp-title-text{
     margin: 0 401px !important;

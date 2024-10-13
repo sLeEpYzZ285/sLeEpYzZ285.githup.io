@@ -39,6 +39,21 @@ export const siteConfig = {
       href: "/about",
     }
   ],
+  footer:{
+    address: {
+      title: "สำนักงานใหญ่",
+      detail:
+        "ตั้งอยู่เลขที่ 31,33,35 ซอยศูนย์การค้าสาย 4 ถนนสุขุมวิท ตำบลท่าประดู่ อำเภอเมืองระยองจังหวัดระยอง 21000",
+    },
+    site_map_title: "เมนู",
+    contact: {
+      title: "ช่องทางการติดต่อ",
+      facebook: "ระยอง โอเอ แอนด์ เซอร์วิส",
+      line: "@rayongoa",
+      mail: "all@rayong-oa.com",
+      phone: ["038-860278", "086-3276841", " 038-860279"],
+    },
+  },
   links: {
     github: "https://github.com/nextui-org/nextui",
     twitter: "https://twitter.com/getnextui",

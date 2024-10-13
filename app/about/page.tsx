@@ -1,4 +1,5 @@
 "use client";
+import ModalContact from "@/components/ContactButton/ModalContact";
 import { title } from "@/components/primitives";
 import { Button, Image } from "@nextui-org/react";
 import { JackInTheBox, Slide, Zoom } from "react-awesome-reveal";
@@ -40,7 +41,8 @@ export default function AboutPage() {
             </Slide>
             <div className="mt-5">
               <JackInTheBox cascade triggerOnce>
-              <Button color="primary">ติดต่อเพิ่มเติม</Button>
+                <ModalContact text="ติดต่อเพิ่มเติม"/>
+              {/* <Button color="primary">ติดต่อเพิ่มเติม</Button> */}
               </JackInTheBox>
             </div>
           </div>

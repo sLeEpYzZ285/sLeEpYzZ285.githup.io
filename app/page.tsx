@@ -16,22 +16,14 @@ import ProductTypeBanner from "./components/ProductTypeBanner";
 import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
 import Link from "next/link";
 import { Fade, Hinge, JackInTheBox, Slide, Zoom } from "react-awesome-reveal";
+import { promotion_photo } from "@/api/promotion";
 
 const OPTIONS: EmblaOptionsType = { loop: true };
 const SLIDE_COUNT = 5;
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
-const promotion_photo = [
-  "https://cdn.mercular.com/images/homepage/sections/8/spaces/11/1721029781883_Lention-ImportProduct_HP-Banner.jpg",
-  "https://cdn.mercular.com/images/homepage/sections/8/spaces/11/1721029781885_Wobkey-HP.jpg",
-  "https://cdn.mercular.com/images/homepage/sections/8/spaces/11/1721029781880_HP-Banner.jpg",
-  "https://cdn.mercular.com/images/homepage/sections/8/spaces/11/1721029781884_Qwertykey-HP.jpg",
-  "https://cdn.mercular.com/images/homepage/sections/8/spaces/11/1721029781878_HP%20Banner.jpg",
-  "https://cdn.mercular.com/images/homepage/sections/8/spaces/11/1721029781885_ThunderRobot-HP.jpg",
-  "https://cdn.mercular.com/images/homepage/sections/8/spaces/11/1721029781869_DS_BD_V2-HP.jpg",
-];
 const notebook = products.filter((products) => products.type === "notebook");
-const mornitor = products.filter((products) => products.type === "mornitor");
+const monitor = products.filter((products) => products.type === "monitor");
 const printer = products.filter((products) => products.type === "printer");
 
 export default function Home() {
@@ -125,26 +117,26 @@ export default function Home() {
           </Zoom>
 
           <div className="grid grid-cols-12 mt-10 gap-6">
-            <div className="col-span-12 sm:col-span-7">
+            <div className="col-span-12 md:col-span-7">
               {products.slice(0, 3).map((data, i) => (
                 <JackInTheBox triggerOnce key={data.id}>
                   <Link
                     className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 "
-                    href={`/products/${data.id}`}
+                    href={`/product`}
                   >
                     <HitProduct data={data} rank={i + 1} />
                   </Link>
                 </JackInTheBox>
               ))}
             </div>
-            <div className="col-span-12 sm:col-span-5 ">
-              <Fade triggerOnce>
+            <div className="col-span-12 md:col-span-5 flex justify-center">
+              <Fade triggerOnce className="">
                 <Image
                   src={"photo/promotion_1.jpg"}
                   alt="asuslogo"
                   width={500}
                   height={800}
-                  className=" rounded-xl  !w-full !h-full m-0"
+                  className=" mx-auto rounded-xl  !w-full !h-full m-0"
                 />
               </Fade>
             </div>
@@ -166,104 +158,6 @@ export default function Home() {
             <ProductTypeBanner />
           </Fade>
         </div>
-        {/* <div className="grid grid-cols-12 gap-6 mt-10">
-          
-          <div className="col-span-8">
-          <Card isFooterBlurred radius="lg" className="border-none">
-            <Image
-              alt="Woman listing to music"
-              height={200}
-              src="/photo/product_type1.jpeg"
-              width={200}
-              className=" rounded-xl overflow-hidden object-cover  !w-full !h-full hover:shadow-lg hover:shadow-primary-100 hover:scale-105 transition-all  cursor-pointer"
-            />
-            <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-              <p className="text-tiny text-white/80">Available soon.</p>
-              <Button
-                className="text-tiny text-white bg-black/20"
-                variant="flat"
-                color="default"
-                radius="lg"
-                size="sm"
-              >
-                Notify me
-              </Button>
-            </CardFooter>
-          </Card> 
-          </div>
-          <div className="col-span-4 ">
-          <Card  isFooterBlurred radius="lg" className="border-none h-full">
-            <Image
-              alt="Woman listing to music"
-              height={200}
-              src="/photo/product_type3.jpeg"
-              width={200}
-              className=" rounded-xl  overflow-hidden object-cover  !w-full !h-full hover:shadow-lg hover:shadow-primary-100 hover:scale-105 transition-all  cursor-pointer"
-            />
-            <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-              <p className="text-tiny text-white/80">Available soon.</p>
-              <Button
-                className="text-tiny text-white bg-black/20"
-                variant="flat"
-                color="default"
-                radius="lg"
-                size="sm"
-              >
-                Notify me
-              </Button>
-            </CardFooter>
-          </Card> 
-   
-          </div>
-          <div className="col-span-6">
-          <Card isFooterBlurred radius="lg" className="border-none">
-            <Image
-              alt="Woman listing to music"
-              height={200}
-              src="/photo/product_type2.jpeg"
-              width={200}
-              className=" rounded-xl  !w-full !h-full hover:shadow-lg hover:shadow-primary-100 hover:scale-105 transition-all  cursor-pointer"
-            />
-            <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-              <p className="text-tiny text-white/80">Available soon.</p>
-              <Button
-                className="text-tiny text-white bg-black/20"
-                variant="flat"
-                color="default"
-                radius="lg"
-                size="sm"
-              >
-                Notify me
-              </Button>
-            </CardFooter>
-          </Card> 
-          
-          </div>
-          <div className="col-span-6 w-full h-full">
-          <Card isFooterBlurred radius="lg" className="border-none h-full">
-            <Image
-              alt="Woman listing to music"
-              height={200}
-              src="/photo/product_type4.jpeg"
-              width={200}
-              className=" rounded-xl  !w-full !h-full hover:shadow-lg hover:shadow-primary-100 hover:scale-105 transition-all  cursor-pointer"
-            />
-            <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-              <p className="text-tiny text-white/80">Available soon.</p>
-              <Button
-                className="text-tiny text-white bg-black/20"
-                variant="flat"
-                color="default"
-                radius="lg"
-                size="sm"
-              >
-                Notify me
-              </Button>
-            </CardFooter>
-          </Card> 
-  
-          </div>
-        </div> */}
       </section>
 
       <section className="mt-[150px]">
@@ -294,33 +188,38 @@ export default function Home() {
         </div>
         <Divider />
         <Slide triggerOnce direction="up">
-          <div className="grid grid-cols-12 mt-10 gap-3 ">
-            <Card
-              shadow="sm"
-              className="h-full col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
-              isPressable
-              onPress={() => console.log("item pressed")}
+          <div className="flex flex-nowrap  snap-x  scroll-smooth overflow-x-scroll overflow-hidden   lg:grid grid-cols-12 pb-8 mt-10 gap-3  ">
+            <Link
+              className="snap-center mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
+              href={`/products?type=monitor`}
             >
-              <CardBody className="overflow-visible p-0">
-                <Image
-                  shadow="sm"
-                  radius="lg"
-                  width="100%"
-                  height="100%"
-                  alt="printer"
-                  className="w-full !aspect-[4/5] object-cover overflow-hidden h-full"
-                  src="https://image.benq.com/is/image/benqco/Gaming-Slider-M?$ResponsivePreset$"
-                />
-              </CardBody>
-              <CardFooter className="text-small justify-between">
-                <b>จอคอมพิวเตอร์</b>
-                <p className="text-default-500">ดูทั้งหมด</p>
-              </CardFooter>
-            </Card>
-            {mornitor.slice(0, 5).map((data) => (
+              <Card
+                shadow="sm"
+                
+                isPressable className="h-full w-full"
+              >
+                <CardBody className="overflow-visible p-0">
+                  <Image
+                    shadow="sm"
+                    radius="lg"
+                    width="100%"
+                    height="100%"
+                    alt="printer"
+                    className="w-full !aspect-[4/5] object-cover overflow-hidden h-full"
+                    src="https://image.benq.com/is/image/benqco/Gaming-Slider-M?$ResponsivePreset$"
+                  />
+                </CardBody>
+                <CardFooter className="text-small justify-between">
+                  <b>จอคอมพิวเตอร์</b>
+                  <p className="text-default-500">ดูทั้งหมด</p>
+                </CardFooter>
+              </Card>
+            </Link>
+
+            {monitor.slice(0, 5).map((data) => (
               <Link
-                className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 "
-                href={`/products/${data.id}`}
+                className="mx-w-[350px] min-w-[180px] snap-center col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 "
+                href={`/product`}
                 key={data.id}
               >
                 <CardProduct data={data} />
@@ -332,107 +231,107 @@ export default function Home() {
 
       <section className="mt-[70px]">
         <div className="mb-5">
-        <Slide direction="right" duration={1500} triggerOnce>
-          <h1 className="text-2xl font-base">
-            <span className="text-primary font-bold">Notebook</span> | เร็วแรง
-            ทันสมัย ประสิทธิภาพสูงสุด
-          </h1>
+          <Slide direction="right" duration={1500} triggerOnce>
+            <h1 className="text-2xl font-base">
+              <span className="text-primary font-bold">Notebook</span> | เร็วแรง
+              ทันสมัย ประสิทธิภาพสูงสุด
+            </h1>
           </Slide>
         </div>
         <Divider />
         <Slide triggerOnce direction="up">
-        <div className="grid grid-cols-12 grid-flow-row grid-rows-1 mt-10 gap-3 ">
-          <Card
-            shadow="sm"
-            className="h-full col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
-            isPressable
-            onPress={() => console.log("item pressed")}
-          >
-            <CardBody className="overflow-visible p-0">
-              <Image
-                shadow="sm"
-                radius="lg"
-                width="100%"
-                height="100%"
-                alt="printer"
-                className="w-full !aspect-[4/5] object-cover overflow-hidden h-full"
-                src="https://dlcdnwebimgs.asus.com/gain/CBECA40C-88C6-449A-956B-3C7A96CEB865/w750/h470"
-              />
-            </CardBody>
-            <CardFooter className="text-small justify-between">
-              <b>Notebook</b>
-              <p className="text-default-500">ดูทั้งหมด</p>
-            </CardFooter>
-          </Card>
-          {notebook.slice(0, 5).map((data) => (
+          <div className="flex flex-nowrap  snap-x  scroll-smooth overflow-x-scroll overflow-hidden   lg:grid grid-cols-12 pb-8 mt-10 gap-3  ">
             <Link
-              className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 "
-              href={`/products/${data.id}`}
-              key={data.id}
+              className="snap-center mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
+              href={`/products?type=notebook`}
             >
-              <CardProduct data={data} />
+              <Card shadow="sm" isPressable className="h-full w-full">
+                <CardBody className="overflow-visible p-0">
+                  <Image
+                    shadow="sm"
+                    radius="lg"
+                    width="100%"
+                    height="100%"
+                    alt="printer"
+                    className="w-full !aspect-[4/5] object-cover overflow-hidden h-full"
+                    src="https://dlcdnwebimgs.asus.com/gain/CBECA40C-88C6-449A-956B-3C7A96CEB865/w750/h470"
+                  />
+                </CardBody>
+                <CardFooter className="text-small justify-between">
+                  <b>Notebook</b>
+                  <p className="text-default-500">ดูทั้งหมด</p>
+                </CardFooter>
+              </Card>
             </Link>
-          ))}
-        </div>
+            {notebook.slice(0, 5).map((data) => (
+              <Link
+                className="snap-center mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 "
+                href={`/product`}
+                key={data.id}
+              >
+                <CardProduct data={data} />
+              </Link>
+            ))}
+          </div>
         </Slide>
       </section>
 
       <section className="mt-[70px]">
         <div className="mb-5">
-        <Slide direction="right" duration={1500} triggerOnce>
-          <h1 className="text-2xl font-base">
-            <span className="text-primary font-bold">Printer</span> | คมชัด
-            ลื่นไหล ไม่มีสะดุด{" "}
-          </h1>
+          <Slide direction="right" duration={1500} triggerOnce>
+            <h1 className="text-2xl font-base">
+              <span className="text-primary font-bold">Printer</span> | คมชัด
+              ลื่นไหล ไม่มีสะดุด{" "}
+            </h1>
           </Slide>
         </div>
         <Divider />
         <Slide triggerOnce direction="up">
-        <div className="grid grid-cols-12 mt-10 gap-3 ">
-          <Card
-            shadow="sm"
-            className="h-full col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
-            isPressable
-            onPress={() => console.log("item pressed")}
-          >
-            <CardBody className="overflow-visible p-0 ">
-              <Image
-                shadow="sm"
-                radius="lg"
-                width="100%"
-                height="100%"
-                alt="printer"
-                className="!w-full  !aspect-[4/5] object-cover overflow-hidden h-full "
-                src="https://cdn.thewirecutter.com/wp-content/media/2024/08/laserprinters-2048px-02603-2x1-1.jpg?width=2048&quality=75&crop=2:1&auto=webp"
-              />
-            </CardBody>
-            <CardFooter className="text-small justify-between">
-              <b>Printer</b>
-              <p className="text-default-500">ดูทั้งหมด</p>
-            </CardFooter>
-          </Card>
-          {printer.slice(0, 5).map((data) => (
+          <div className="flex flex-nowrap  snap-x  scroll-smooth overflow-x-scroll overflow-hidden   lg:grid grid-cols-12 pb-8 mt-10 gap-3  ">
             <Link
-              className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 "
-              href={`/products/${data.id}`}
-              key={data.id}
+              className="snap-center mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
+              href={`/products?type=printer`}
             >
-              <CardProduct data={data} />
+              <Card shadow="sm"  isPressable className="h-full w-full">
+                <CardBody className="overflow-visible p-0 ">
+                  <Image
+                    shadow="sm"
+                    radius="lg"
+                    width="100%"
+                    height="100%"
+                    alt="printer"
+                    className="!w-full  !aspect-[4/5] object-cover overflow-hidden h-full "
+                    src="https://cdn.thewirecutter.com/wp-content/media/2024/08/laserprinters-2048px-02603-2x1-1.jpg?width=2048&quality=75&crop=2:1&auto=webp"
+                  />
+                </CardBody>
+                <CardFooter className="text-small justify-between">
+                  <b>Printer</b>
+                  <p className="text-default-500">ดูทั้งหมด</p>
+                </CardFooter>
+              </Card>
             </Link>
-          ))}
-        </div>
+            {printer.slice(0, 5).map((data) => (
+              <Link
+                className="snap-center mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
+                href={`/product`}
+                key={data.id}
+              >
+                <CardProduct data={data} />
+              </Link>
+            ))}
+          </div>
         </Slide>
       </section>
 
       <section className="mt-[150px]">
         <Zoom triggerOnce>
-        <div className="">
-          <h1 className={title({ color: "blue" })}>บริการทั่วถึง</h1>
-          <h1 className={title({ color: "yellow" })}>พร้อมช่วยเหลือลูกค้า</h1>
-          <h1 className={title({ color: "blue" })}>อยู่เสมอ</h1>
-        </div>
+          <div >
+            <h1 className={title({ color: "blue" })}>บริการทั่วถึง</h1>
+            <h1 className={title({ color: "yellow" })}>พร้อมช่วยเหลือลูกค้า</h1>
+            <h1 className={title({ color: "blue" })}>อยู่เสมอ</h1>
+          </div>
         </Zoom>
-        <div  className="grid grid-cols-9 gap-7 pt-10">
+        <div className="grid grid-cols-9 gap-7 pt-10">
           <Slide direction="left" className="col-span-9 sm:col-span-3">
             <Image
               src={
@@ -444,7 +343,7 @@ export default function Home() {
               className=" rounded-xl    aspect-video !w-full !h-full overflow-hidden object-cover hover:scale-110 transition-all"
             />
           </Slide>
-          <Slide direction="up"  className="col-span-9 sm:col-span-3">
+          <Slide direction="up" className="col-span-9 sm:col-span-3">
             <Image
               src={
                 "https://www.northwestcareercollege.edu/wp-content/uploads/2023/02/Qualifications-do-You-Need-to-be-an-IT-Technician.jpg"
@@ -469,7 +368,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* <div className="">
+      {/* <div >
   <ParallaxSlide/>
 </div> */}
       {/* <div className=" mb-8">

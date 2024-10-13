@@ -20,7 +20,7 @@ const product_type = [
     text: "คอมพิวเตอร์",
   },
   {
-    key: "mornitor",
+    key: "monitor",
     text: "จอคอม",
   },
   {

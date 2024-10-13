@@ -255,7 +255,7 @@ export const products: Array<product_type> = [
     image:
       "https://images.samsung.com/is/image/samsung/p6pim/th/ls28bg700eexxt/gallery/th-odyssey-g7-g70b-ls28bg700eexxt-535250548?$650_519_PNG$",
     name: "Samsung Odyssey G7",
-    type: "mornitor",
+    type: "monitor",
     properties: {
       display: "28 นิ้ว",
       panelType: "VA",
@@ -280,7 +280,7 @@ export const products: Array<product_type> = [
     image:
       "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/88116e53-3697-4765-a72e-68847e26a6b6/md07000225-large01-jpg",
     name: "LG UltraFine 5K",
-    type: "mornitor",
+    type: "monitor",
     properties: {
       display: "28 นิ้ว",
       panelType: "VA",
@@ -305,7 +305,7 @@ export const products: Array<product_type> = [
     image:
       "https://media-cdn.bnn.in.th/40476/DELL-MONITOR-UltraSharp-U2720Q-IPS-4K-60Hz-1-square_medium.jpg",
     name: "Dell UltraSharp U2720Q",
-    type: "mornitor",
+    type: "monitor",
     properties: {
       display: "28 นิ้ว",
       panelType: "VA",
@@ -330,7 +330,7 @@ export const products: Array<product_type> = [
     image:
       "https://www.jib.co.th/img_master/product/original/20230706151628_60574_287_1.jpg",
     name: "Acer Nitro VG270",
-    type: "mornitor",
+    type: "monitor",
     properties: {
       display: "28 นิ้ว",
       panelType: "VA",
@@ -355,7 +355,7 @@ export const products: Array<product_type> = [
     image:
       "https://www.asus.com/media/global/gallery/fbjfzudhdbnrqjme_setting_xxx_0_90_end_800.png",
     name: "ASUS ProArt PA32UCX",
-    type: "mornitor",
+    type: "monitor",
     properties: {
       display: "28 นิ้ว",
       panelType: "VA",

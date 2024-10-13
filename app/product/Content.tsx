@@ -6,6 +6,7 @@ import { Button } from "@nextui-org/button";
 import Image from "next/image";
 import { EmblaOptionsType } from "embla-carousel";
 import ProppertiesTable from "@/components/ProppertiesTable";
+import ModalContact from "@/components/ContactButton/ModalContact";
 
 const product_detail = {
   detail: [
@@ -180,9 +181,10 @@ export default function Content() {
                 <div className="text-xl">รุ่นที่1 / รุ่นที่2 / รุ่นที่3</div>
               </div>
               <div className="my-10">
-                <Button className="w-full" color="primary">
+                <ModalContact buttonStyle="w-full" text="ติดต่อสั่งซื้อ"/>
+                {/* <Button className="w-full" color="primary">
                   ติดต่อสั่งซื้อ
-                </Button>
+                </Button> */}
               </div>
             </div>
             <div className=""></div>
@@ -212,7 +214,9 @@ export default function Content() {
         <div className="mt-5"></div>
       </section>
       <section>
-        <Accordion selectionMode="multiple" defaultExpandedKeys={["1","2"]}>
+        <Accordion selectionMode="multiple" 
+        // defaultExpandedKeys={["1","2"]}
+        >
           <AccordionItem
           
             key="1"

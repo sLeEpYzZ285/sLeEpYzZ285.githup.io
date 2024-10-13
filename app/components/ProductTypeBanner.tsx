@@ -6,6 +6,8 @@ import {
     Button,
   } from "@nextui-org/react";
   import Image from "next/image";
+import Link from "next/link";
+  
   
   export default function ProductTypeBanner() {
     return (
@@ -22,6 +24,8 @@ import {
           />
           <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
             <p className="text-tiny text-white/80">โน๊ตบุ๊ค ทั้งสายเกมมิ่ง และสายทำงาน</p>
+            
+            <Link href="/products?type=notebook">
             <Button
               className="text-tiny  text-white "
               variant="flat"
@@ -31,6 +35,7 @@ import {
             >
               เพิ่มเติม
             </Button>
+            </Link>
           </CardFooter>
         </Card> 
         </div>
@@ -45,6 +50,7 @@ import {
           />
           <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
             <p className="text-tiny text-white/80">All in one PC สำหรับสายทำงาน แบบครบจบ</p>
+            <Link href="/products?type=all_in_one">
             <Button
               className="text-tiny  text-white "
               variant="flat"
@@ -54,6 +60,7 @@ import {
             >
               เพิ่มเติม
             </Button>
+            </Link>
           </CardFooter>
         </Card> 
  
@@ -69,6 +76,7 @@ import {
           />
           <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
             <p className="text-tiny text-white/80">Printer คุณภาพขั้นสุด ลื่นไหล ไม่มีสะดุด</p>
+            <Link href="/products?type=printer">
             <Button
               className="text-tiny  text-white "
               variant="flat"
@@ -78,6 +86,7 @@ import {
             >
               เพิ่มเติม
             </Button>
+            </Link>
           </CardFooter>
         </Card> 
         
@@ -93,6 +102,7 @@ import {
           />
           <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
             <p className="text-tiny text-white/80">Computer ที่ออกแบบได้ดั่งใจ เพื่อประสิทธิภาพขั้นสุด</p>
+            <Link href="/products?type=comset">
             <Button
               className="text-tiny  text-white "
               variant="flat"
@@ -102,6 +112,7 @@ import {
             >
               เพิ่มเติม
             </Button>
+            </Link>
           </CardFooter>
         </Card> 
 
