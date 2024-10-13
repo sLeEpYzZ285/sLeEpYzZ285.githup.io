@@ -334,7 +334,7 @@ export default function Home() {
           </div>
         </Zoom>
         <div className="grid grid-cols-9 gap-7 pt-10">
-          <Slide direction="left" className="col-span-9 sm:col-span-3">
+          <Slide triggerOnce direction="left" className="col-span-9 sm:col-span-3">
             <Image
               src={
                 "https://www.ppmcontract.com/wp-content/uploads/2023/10/it-support-department-duties.jpg"
@@ -345,7 +345,7 @@ export default function Home() {
               className=" rounded-xl    aspect-video !w-full !h-full overflow-hidden object-cover hover:scale-110 transition-all"
             />
           </Slide>
-          <Slide direction="up" className="col-span-9 sm:col-span-3">
+          <Slide triggerOnce direction="up" className="col-span-9 sm:col-span-3">
             <Image
               src={
                 "https://www.northwestcareercollege.edu/wp-content/uploads/2023/02/Qualifications-do-You-Need-to-be-an-IT-Technician.jpg"
@@ -356,7 +356,7 @@ export default function Home() {
               className=" rounded-xl  aspect-video  !w-full !h-full overflow-hidden object-cover hover:scale-110 transition-all"
             />
           </Slide>
-          <Slide direction="right" className="col-span-9 sm:col-span-3">
+          <Slide triggerOnce direction="right" className="col-span-9 sm:col-span-3">
             <Image
               src={
                 "https://cdn.prod.website-files.com/5b6df8bb681f89c158b48f6b/5d7b6a6e00f64f8f69b8bf36_it-services-technician.jpg"
