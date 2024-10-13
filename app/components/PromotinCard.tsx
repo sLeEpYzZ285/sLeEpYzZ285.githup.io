@@ -19,39 +19,39 @@ export default function PromotionCard() {
           removeWrapper
           alt="Card background"
           className="z-0 w-full h-full object-cover"
-          src="https://cdn.mercular.com/images/bestof/v2/banners/best-of-gaming-laptop-q1-24.jpg"
+          src="https://dlcdnwebimgs.asus.com/gain/CBECA40C-88C6-449A-956B-3C7A96CEB865/w750/h470"
         />
       </Card>
       <Card className="col-span-12 sm:col-span-4 h-[300px]">
         <CardHeader className="absolute z-10 top-1 flex-col !items-start">
           <p className="text-tiny text-white/60 uppercase font-bold">
-            Plant a tree
+          Computer ที่ออกแบบได้ดั่งใจ เพื่อประสิทธิภาพขั้นสุด
           </p>
           <h4 className="text-white font-medium text-large">
-            Contribute to the planet
+          เพื่อประสิทธิภาพขั้นสุด
           </h4>
         </CardHeader>
         <Image
           removeWrapper
           alt="Card background"
           className="z-0 w-full h-full object-cover"
-          src="https://nextui.org/images/card-example-3.jpeg"
+          src="https://assets.hardwarezone.com/img/2020/06/asus-rog-strix-g35.jpg"
         />
       </Card>
       <Card className="col-span-12 sm:col-span-4 h-[300px]">
         <CardHeader className="absolute z-10 top-1 flex-col !items-start">
           <p className="text-tiny text-white/60 uppercase font-bold">
-            Supercharged
+          Printer
           </p>
           <h4 className="text-white font-medium text-large">
-            Creates beauty like a beast
+          คมชัด ลื่นไหล ไม่มีสะดุด
           </h4>
         </CardHeader>
         <Image
           removeWrapper
           alt="Card background"
           className="z-0 w-full h-full object-cover"
-          src="https://nextui.org/images/card-example-2.jpeg"
+          src="https://cdn.thewirecutter.com/wp-content/media/2024/08/laserprinters-2048px-02603-2x1-1.jpg?width=2048&quality=75&crop=2:1&auto=webp"
         />
       </Card>
       <Card
@@ -84,9 +84,9 @@ export default function PromotionCard() {
             {/* <p className="text-black text-tiny">Available soon.</p>
             <p className="text-black text-tiny">Get notified.</p> */}
           </div>
-          <Button className="text-tiny" color="primary" radius="full" size="sm">
+          {/* <Button className="text-tiny" color="primary" radius="full" size="sm">
             Notify Me
-          </Button>
+          </Button> */}
         </CardFooter>
       </Card>
       <Card
@@ -94,12 +94,12 @@ export default function PromotionCard() {
         className="w-full h-[300px] col-span-12 sm:col-span-7"
       >
         <CardHeader className="absolute z-10 top-1 flex-col items-start">
-          <p className="text-tiny text-white/60 uppercase font-bold">
+          {/* <p className="text-tiny text-white/60 uppercase font-bold">
             Your day your way
           </p>
           <h4 className="text-white/90 font-medium text-xl">
             Your checklist for better sleep
-          </h4>
+          </h4> */}
         </CardHeader>
         <Image
           removeWrapper
@@ -108,7 +108,7 @@ export default function PromotionCard() {
           src="https://cdn.mercular.com/images/homepage/sections/8/spaces/11/1727687490709_MW_HP.jpg"
         />
         <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
-          <div className="flex flex-grow gap-2 items-center">
+          {/* <div className="flex flex-grow gap-2 items-center">
             <Image
               alt="Breathing app icon"
               className="rounded-full w-10 h-11 bg-black"
@@ -123,7 +123,7 @@ export default function PromotionCard() {
           </div>
           <Button radius="full" size="sm">
             Get App
-          </Button>
+          </Button> */}
         </CardFooter>
       </Card>
     </div>
