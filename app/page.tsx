@@ -190,9 +190,9 @@ export default function Home() {
         </div>
         <Divider />
         <Slide triggerOnce direction="up">
-          <div className="flex flex-nowrap  snap-x  scroll-smooth overflow-x-scroll overflow-hidden   lg:grid grid-cols-12 pb-8 mt-10 gap-3  ">
+          <div className="flex flex-nowrap  snap-x snap-proximity   scroll-smooth overflow-x-scroll overflow-hidden   lg:grid grid-cols-12 pb-8 mt-10 gap-3  ">
             <Link
-              className="snap-center mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
+              className="snap-center snap-always mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
               href={`/products?type=monitor`}
             >
               <Card
@@ -220,7 +220,7 @@ export default function Home() {
 
             {monitor.slice(0, 5).map((data) => (
               <Link
-                className="mx-w-[350px] min-w-[180px] snap-center col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 "
+                className="mx-w-[350px] min-w-[180px] snap-center snap-always col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 "
                 href={`/product`}
                 key={data.id}
               >
@@ -242,9 +242,9 @@ export default function Home() {
         </div>
         <Divider />
         <Slide triggerOnce direction="up">
-          <div className="flex flex-nowrap  snap-x  scroll-smooth overflow-x-scroll overflow-hidden   lg:grid grid-cols-12 pb-8 mt-10 gap-3  ">
+          <div className="flex flex-nowrap  snap-x  snap-mandatory  scroll-smooth overflow-x-scroll overflow-hidden   lg:grid grid-cols-12 pb-8 mt-10 gap-3  ">
             <Link
-              className="snap-center mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
+              className="snap-center snap-always mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
               href={`/products?type=notebook`}
             >
               <Card shadow="sm" isPressable className="h-full w-full">
@@ -267,7 +267,7 @@ export default function Home() {
             </Link>
             {notebook.slice(0, 5).map((data) => (
               <Link
-                className="snap-center mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 "
+                className="snap-center snap-always mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 "
                 href={`/product`}
                 key={data.id}
               >
@@ -289,9 +289,9 @@ export default function Home() {
         </div>
         <Divider />
         <Slide triggerOnce direction="up">
-          <div className="flex flex-nowrap  snap-x  scroll-smooth overflow-x-scroll overflow-hidden   lg:grid grid-cols-12 pb-8 mt-10 gap-3  ">
+          <div className="flex flex-nowrap  snap-x snap-proximity   scroll-smooth overflow-x-scroll overflow-hidden   lg:grid grid-cols-12 pb-8 mt-10 gap-3  ">
             <Link
-              className="snap-center mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
+              className="snap-center snap-always mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
               href={`/products?type=printer`}
             >
               <Card shadow="sm"  isPressable className="h-full w-full">
@@ -314,7 +314,7 @@ export default function Home() {
             </Link>
             {printer.slice(0, 5).map((data) => (
               <Link
-                className="snap-center mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
+                className="snap-center snap-always mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
                 href={`/product`}
                 key={data.id}
               >
