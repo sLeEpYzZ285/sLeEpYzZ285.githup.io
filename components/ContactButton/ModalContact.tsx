@@ -45,11 +45,11 @@ export default function ModalContact({
             <>
               <ModalHeader className="flex justify-center ">
                 <Image
-                  className="w-4/5 mx-auto"
-                  src="logo/rayong_oa_newlogo_newfont2.png"
+                  className="w-4/5 mt-2 mx-auto rounded-none"
+                  src="logo/Logo-ROA_old.png"
                 />
               </ModalHeader>
-              <ModalBody className=" relative z-10 mt-8">
+              <ModalBody className=" relative z-10 mt-4">
                 <h1
                   className={`${title({
                     color: "blue",

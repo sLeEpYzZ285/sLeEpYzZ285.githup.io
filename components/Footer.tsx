@@ -97,7 +97,7 @@ export default function Footer() {
                 {/* <NewLogo /> */}
                 <Image
                   src={
-                    "logo/rayong_oa_newlogo_newfont.png"
+                    "logo/Logo-ROA_old.png"
                   }
                   width={150}
                   height={150}
