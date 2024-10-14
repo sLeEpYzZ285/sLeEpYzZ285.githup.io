@@ -190,7 +190,7 @@ export default function Home() {
         </div>
         <Divider />
         <Slide triggerOnce direction="up">
-          <div className="flex flex-nowrap  snap-x snap-proximity   scroll-smooth overflow-x-scroll overflow-hidden   lg:grid grid-cols-12 pb-8 mt-10 gap-3  ">
+          <div className="flex flex-nowrap  snap-x snap-mandatory   scroll-smooth overflow-x-scroll overflow-hidden   lg:grid grid-cols-12 pb-8 mt-10 gap-3  ">
             <Link
               className="snap-center snap-always mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
               href={`/products?type=monitor`}
@@ -289,7 +289,7 @@ export default function Home() {
         </div>
         <Divider />
         <Slide triggerOnce direction="up">
-          <div className="flex flex-nowrap  snap-x snap-proximity   scroll-smooth overflow-x-scroll overflow-hidden   lg:grid grid-cols-12 pb-8 mt-10 gap-3  ">
+          <div className="flex flex-nowrap  snap-x snap-mandatory   scroll-smooth overflow-x-scroll overflow-hidden   lg:grid grid-cols-12 pb-8 mt-10 gap-3  ">
             <Link
               className="snap-center snap-always mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
               href={`/products?type=printer`}
