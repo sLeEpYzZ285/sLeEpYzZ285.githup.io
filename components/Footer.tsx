@@ -49,7 +49,7 @@ export default function Footer() {
           <div className="col-span-12 h-[2px] bg-primary-100 w-full mt-24 mb-8   "></div>
           <div className="LOGO text-center block col-span-12 xl:col-span-2 xl:flex gap-4">
             <div className=" flex text-center justify-center -mt-32 mb-4 xl:my-0">
-              <div className="   p-4 w-32 h-32 object-center flex justify-center items-center">
+              <div className="   p-4 w-40 h-40 object-center flex justify-center items-center">
                 {/* <svg
                   width="100"
                   height="100"
@@ -99,8 +99,8 @@ export default function Footer() {
                   src={
                     "logo/rayong_oa_newlogo_newfont.png"
                   }
-                  width={100}
-                  height={100}
+                  width={150}
+                  height={150}
                   alt="RayongOA Logo"
                   className=" drop-shadow-xl "
                 />
