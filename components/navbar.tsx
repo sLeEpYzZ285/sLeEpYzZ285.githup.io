@@ -60,7 +60,7 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-          <Image className="w-48 mx-auto"   src="logo/rayong_oa_newlogo_newfont2.png"/>
+          <Image className="h-10 mx-auto"   src="logo/rayong_oa_newlogo_newfont2.png"/>
             {/* <Logo /> */}
             {/* <Image
                 src={
