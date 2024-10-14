@@ -46,7 +46,7 @@ export default function ModalContact({
               <ModalHeader className="flex justify-center ">
                 <Image
                   className="w-4/5 mx-auto"
-                  src="logo/rayong_oa_newlogo2.png"
+                  src="logo/rayong_oa_newlogo_newfont2.png"
                 />
               </ModalHeader>
               <ModalBody className=" relative z-10 mt-8">
