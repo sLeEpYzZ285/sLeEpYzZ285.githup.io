@@ -8,6 +8,7 @@ import {
   Button,
 } from "@nextui-org/react";
 import type { Selection } from "@nextui-org/react";
+import { productTypeListType } from "@/api/product_type";
 
 const product_type = [
   {
@@ -47,11 +48,11 @@ export default function TypeButton({ onFilterChange }: ProductFilterProps) {
   // ค้นหาสินค้าทั้งหมดที่ถูกเลือก
   const selectedProducts = React.useMemo(() => {
     const selectedArray = Array.from(selectedKeys); // แปลง Set เป็น array
-    return product_type.filter(item => selectedArray.includes(item.key));
+    return productTypeListType.filter(item => selectedArray.includes(item.type));
   }, [selectedKeys]);
 
   // สร้างข้อความสำหรับแสดงสินค้าที่ถูกเลือก
-  const selectedText = selectedProducts.map(item => item.text).join(", ") || "เลือกประเภทสินค้า";
+  const selectedText = selectedProducts.map(item => item.name).join(", ") || "เลือกประเภทสินค้า";
 
   return (
     <>
@@ -60,7 +61,7 @@ export default function TypeButton({ onFilterChange }: ProductFilterProps) {
     <Dropdown>
       <DropdownTrigger>
         <Button variant="bordered" className="capitalize">
-          {selectedText}
+          <p className="max-w-32 sm:max-w-60 md:max-w-full text-ellipsis overflow-x-clip">{selectedText}</p>
         </Button>
       </DropdownTrigger>
       <DropdownMenu
@@ -72,10 +73,9 @@ export default function TypeButton({ onFilterChange }: ProductFilterProps) {
         selectionMode="multiple"
         selectedKeys={selectedKeys}
         onSelectionChange={handleSelectionChange}
-        
       >
-        {product_type.map((data) => (
-          <DropdownItem  key={data.key}>{data.text}</DropdownItem>
+        {productTypeListType.map((data) => (
+          <DropdownItem  key={data.type}>{data.name}</DropdownItem>
         ))}
       </DropdownMenu>
     </Dropdown>
