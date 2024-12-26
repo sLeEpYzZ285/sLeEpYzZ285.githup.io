@@ -28,7 +28,7 @@ export default function HitProduct({
             <Image
               alt={data.name}
               className="object-cover rounded-xl   aspect-square w-full "
-              src={data.image}
+              src={data.image_cover}
               width={240}
             />
             {/* <div className="absolute top-4 left-4 z-20  ">

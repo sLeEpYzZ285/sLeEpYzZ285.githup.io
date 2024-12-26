@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { title } from "@/components/primitives";
 import ProductSlider from "@/components/ProductSlider";
 import { Accordion, AccordionItem } from "@nextui-org/accordion";
@@ -7,7 +7,7 @@ import Image from "next/image";
 import { EmblaOptionsType } from "embla-carousel";
 import ProppertiesTable from "@/components/ProppertiesTable";
 import ModalContact from "@/components/ContactButton/ModalContact";
-
+import { product_type } from "@/api/product_data";
 const product_detail = {
   detail: [
     {
@@ -151,9 +151,9 @@ Fast Fuel: การชาร์จ 10 นาทีช่วยให้ฟั�
 
 const product_photo = [
   "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MUW23?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1712255585028",
-  "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MUW23_AV1?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1712255583612",
-  "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MUW23_AV1?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1712255583612",
-  "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MUW23_AV4?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1712255584820",
+  // "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MUW23_AV1?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1712255583612",
+  // "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MUW23_AV1?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1712255583612",
+  // "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MUW23_AV4?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1712255584820",
   "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MUW23_AV5?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1712255584526",
   "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MUW23?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1712255585028",
 ];
@@ -162,29 +162,23 @@ const OPTIONS: EmblaOptionsType = {};
 const SLIDE_COUNT = 10;
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
-export default function Content() {
+function formatPrice(price: number): string {
+  return new Intl.NumberFormat("th-TH", { style: "decimal" }).format(price);
+}
+
+export default function Content({ data }: { data: product_type | undefined }) {
   return (
-   <>
-   <>
+    <>
       <section>
         <div className="grid grid-cols-12 gap-8 ">
-          <div className="col-span-12 sm:col-span-4 order-2 sm:order-1 flex flex-col justify-between">
+          <div className="col-span-12 sm:col-span-4 order-2 sm:order-1 flex flex-col justify-center">
             <div className="">
-              <h2 className="text-4xl font-semibold">
-                Beats Solo 4 - เฮดโฟนไร้สายแบบ On-Ear - สีชมพูคลาวด์พิงค์
-              </h2>
-              <p className="text-xl mt-5">฿6,900.00</p>
+              <h2 className="text-4xl font-semibold">{data?.name}</h2>
+              <p className="text-xl mt-5">฿{formatPrice(data?.price || 0)}</p>
             </div>
             <div className="mt-8">
-              <h3 className="text-2xl font-semibold">รุ่น</h3>
-              <div className="flex mt-3">
-                <div className="text-xl">รุ่นที่1 / รุ่นที่2 / รุ่นที่3</div>
-              </div>
               <div className="my-10">
-                <ModalContact buttonStyle="w-full" text="ติดต่อสั่งซื้อ"/>
-                {/* <Button className="w-full" color="primary">
-                  ติดต่อสั่งซื้อ
-                </Button> */}
+                <ModalContact buttonStyle="w-full" text="ติดต่อสั่งซื้อ" />
               </div>
             </div>
             <div className=""></div>
@@ -194,7 +188,7 @@ export default function Content() {
             <ProductSlider
               slides={SLIDES}
               options={OPTIONS}
-              photo={product_photo}
+              photo={data?.image || []}
             />
             {/* <Image
               src={"https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MUW23_AV5?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1712255584526"}
@@ -208,28 +202,32 @@ export default function Content() {
       </section>
 
       <section>
-      <h1 className="text-4xl font-semibold mb-5">สเปค</h1>
-        <ProppertiesTable />
+        <h1 className="text-4xl font-semibold mb-5">สเปค</h1>
+        <ProppertiesTable properties={data?.properties} />
 
         <div className="mt-5"></div>
       </section>
       <section>
-        <Accordion selectionMode="multiple" 
-        // defaultExpandedKeys={["1","2"]}
+        <Accordion
+          selectionMode="multiple"
+          // defaultExpandedKeys={["1","2"]}
         >
           <AccordionItem
-          
             key="1"
             aria-label="ข้อมูลผลิตภัณฑ์"
             title={<h1 className="text-4xl font-semibold">ข้อมูลผลิตภัณฑ์</h1>}
             className=""
           >
             <div className="mt-5"></div>
-            {product_detail.detail.map((data, index) => (
+            {data?.product_detail?.detail.map((data, index) => (
               <div className="grid grid-cols-12 " key={index}>
-                <h3 className="text-2xl font-bold col-span-12 sm:col-span-3">{data.title}</h3>
+                <h3 className="text-2xl font-bold col-span-12 sm:col-span-3">
+                  {data.title}
+                </h3>
                 <pre className="mb-5 col-span-12 sm:col-span-9 whitespace-pre-wrap ">
-                  {data.description}
+                {data.description.map((data, index) => (
+                    <p className="mb-5" key={index}>{data}</p>
+                  ))}
                   <br />
                   <br />
                   <hr />
@@ -243,11 +241,15 @@ export default function Content() {
             title={<h1 className="text-4xl font-semibold">สเปค</h1>}
           >
             <div className="mt-5"></div>
-            {product_detail.spec.map((data, index) => (
+            {data?.product_detail?.spec.map((data, index) => (
               <div className="grid grid-cols-12" key={index}>
-                <h3 className="text-2xl font-bold col-span-12 sm:col-span-3">{data.title}</h3>
+                <h3 className="text-2xl font-bold col-span-12 sm:col-span-3">
+                  {data.title}
+                </h3>
                 <pre className="mb-5 col-span-12 sm:col-span-9 whitespace-pre-wrap ">
-                  {data.description}
+                  {data.description.map((data, index) => (
+                    <p className="mb-5" key={index}>{data}</p>
+                  ))}
                   <br />
                   <br />
                   <hr />
@@ -259,6 +261,5 @@ export default function Content() {
       </section>
       {/* // <h1 className={title()}>Pricing</h1> */}
     </>
-   </>
-  )
+  );
 }

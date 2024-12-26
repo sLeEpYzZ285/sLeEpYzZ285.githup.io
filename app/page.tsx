@@ -122,7 +122,7 @@ export default function Home() {
                 <JackInTheBox triggerOnce key={data.id}>
                   <Link
                     className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 "
-                    href={`/product`}
+                    href={`/${data.slug}`}
                   >
                     <HitProduct data={data} rank={i + 1} />
                   </Link>
@@ -221,7 +221,7 @@ export default function Home() {
             {monitor.slice(0, 5).map((data) => (
               <Link
                 className="mx-w-[350px] min-w-[180px] snap-center snap-always col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 "
-                href={`/product`}
+                href={`/${data.slug}`}
                 key={data.id}
               >
                 <CardProduct data={data} />
@@ -268,7 +268,7 @@ export default function Home() {
             {notebook.slice(0, 5).map((data) => (
               <Link
                 className="snap-center snap-always mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 "
-                href={`/product`}
+                href={`/${data.slug}`}
                 key={data.id}
               >
                 <CardProduct data={data} />
@@ -315,7 +315,7 @@ export default function Home() {
             {printer.slice(0, 5).map((data) => (
               <Link
                 className="snap-center snap-always mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
-                href={`/product`}
+                href={`/${data.slug}`}
                 key={data.id}
               >
                 <CardProduct data={data} />

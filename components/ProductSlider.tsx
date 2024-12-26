@@ -21,15 +21,17 @@ export const Thumb: React.FC<PropTypeButton> = (props) => {
   return (
     <div
       className={"mx-1 mb-3 border-2 border-primary/0 rounded-xl !aspect-square  !p-0     ".concat(
-        selected ? "   border-primary/30  shadow-lg shadow-primary-100 rounded-xl" : ""
+        selected
+          ? "   border-primary/30  shadow-lg shadow-primary-100 rounded-xl"
+          : ""
       )}
     >
       <button onClick={onClick} type="button" className="">
         <Image
           src={photo}
           alt="product_photo"
-          width={1000}
-          height={1000}
+          width={80}
+          height={80}
           className=" rounded-xl overflow-hidden object-cover aspect-square   !h-full m-0"
         />
         {/* {index + 1} */}
@@ -70,12 +72,9 @@ const ProductSlider: React.FC<PropType> = (props) => {
 
   return (
     <div className="embla">
-      <div
-        className="embla__viewport "
-        ref={emblaMainRef}
-      >
+      <div className="embla__viewport " ref={emblaMainRef}>
         <div className="embla__container w-full">
-          {photo.map((_,index) => (
+          {photo.map((_, index) => (
             <div className="embla__slide h-auto! w-full mx-10 " key={index}>
               <div className="!w-full !h-full">
                 <Image
@@ -92,18 +91,19 @@ const ProductSlider: React.FC<PropType> = (props) => {
         </div>
       </div>
 
-      <div className="overflow-hidden mt-5">
+      <div className="overflow-hidden mt-5 flex justify-center !mx-0">
         <div className="" ref={emblaThumbsRef}>
-          <div className="flex py-10 ">
-            {photo.map((_, index) => (
-              <Thumb
-                key={index}
-                photo={photo[index]}
-                onClick={() => onThumbClick(index)}
-                selected={index === selectedIndex}
-                index={index}
-              />
-            ))}
+          <div className="flex py-1 ">
+            {photo.length <= 1 ||
+              photo.map((_, index) => (
+                <Thumb
+                  key={index}
+                  photo={photo[index]}
+                  onClick={() => onThumbClick(index)}
+                  selected={index === selectedIndex}
+                  index={index}
+                />
+              ))}
           </div>
         </div>
       </div>

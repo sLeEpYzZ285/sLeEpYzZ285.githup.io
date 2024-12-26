@@ -69,7 +69,7 @@ export default function Products() {
     }
     return filteredProducts; // ถ้าไม่เลือกให้แสดงตามเดิม
   }, [filteredProducts, sortKey]);
-  console.log(typeTop)
+  // console.log(typeTop);
 
   return (
     <>
@@ -113,7 +113,7 @@ export default function Products() {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {typeTop.slice(0, 3).map((data) => (
-                  <Link className="col-span-1 " href={`/product`} key={data.id}>
+                  <Link className="col-span-1 " href={`/${data.slug}`} key={data.id}>
                     <CardProduct data={data} />
                   </Link>
                 ))}
@@ -141,13 +141,12 @@ export default function Products() {
       )}
 
       <section className="mt-10">
-        <div className="flex items-center justify-between">
-          <h3 className="text-xl">ตัวกรอง</h3>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between">
+          <h3 className="text-xl text-start mb-3 sm:mb-0">ตัวกรอง</h3>
           <ProductFilter
             onFilterChange={handleFilterChange}
             onSortChange={handleSortChange}
-          />{" "}
-          {/* ส่งฟังก์ชันกรอง */}
+          />
         </div>
         <br />
         <Divider />
@@ -158,7 +157,7 @@ export default function Products() {
           {sortedProducts.map((data: product_type, i) => (
             <Link
               className="col-span-6 sm:col-span-6 md:col-span-4 lg:col-span-2 "
-              href={`/product`}
+              href={`/${data.slug}`}
               key={data.id}
             >
               <CardProduct data={data} />

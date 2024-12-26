@@ -12,7 +12,7 @@ export default function CardProduct({data}:{data:product_type}) {
         <Image
           alt={data.name}
           className="object-cover rounded-xl   aspect-square w-full "
-          src={data.image} 
+          src={data.image_cover} 
           width={270}
         />
         </div>
