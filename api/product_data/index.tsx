@@ -1,19 +1,102 @@
+export type ProductDetail = {
+  detail: Array<{
+    title: string;
+    description: Array<string>;
+  }>;
+  spec: Array<{
+    title: string;
+    description: Array<string>;
+  }>;
+};
+
 export type product_type = {
   id: string;
-  image: string;
+  slug: string;
+  image_cover: string;
+  image: Array<string>;
   name: string;
   type: string;
   keyword: Array<string>;
   properties: any;
   price: number;
   stock: number;
+  product_detail: ProductDetail;
+};
+
+const product_detail_mockdata: ProductDetail = {
+  detail: [
+    {
+      title: "ภาพรวม",
+      description: [
+        "โฉมใหม่ ของผลิตภัณฑ์สุดคลาสสิกเฮดโฟนแบบดั้งเดิมขวัญใจคนรักเสียงเพลงกลับมาแล้ว และปรับปรุงใหม่ไฉไลกว่าเดิม",
+        "ระบบเสียงตามตำแหน่งพร้อมการติดตามศีรษะแบบไดนามิก¹",
+        "แบตเตอรี่ใช้งานได้นานสูงสุด 50 ชั่วโมง³",
+        "ยกเครื่องมาใหม่หมดเพื่อสุดยอดพลังเสียง",
+        "ไดรเวอร์แบบอัปเกรด เสียงอะคูสติกที่ปรับสมดุลใหม่อย่างลงตัว ปรับการตอบสนองความถี่มาดีกว่าเดิม ทรานสดิวเซอร์ 40 มม. ที่ออกแบบมาโดยเฉพาะช่วยลดเสียงแปลกปลอม ความหน่วง และความผิดเพี้ยนเพื่อสุดยอดช่วงเสียงคมชัด",
+        "ราวกับมีลำโพง 64 ตัวล้อมรอบตัวพร้อมกัน",
+        "ดีไซน์ที่รองรับศีรษะอย่างลงตัวได้รับการคิดค้นโดยเน้นความสบายเป็นหลัก โดยเริ่มจากน้ำหนักเพียง 217 กรัม เบาจนเกือบลืมไปว่ากำลังสวมใส่อยู่",
+        "ฟองน้ำหูฟัง UltraPlush ออกแบบมาให้ทนทานและสวมใส่ได้นุ่มและเบาสบายตลอดทั้งวัน",
+      ],
+    },
+    {
+      title: "ไฮไลท์",
+      description: [
+        "สถาปัตยกรรมเสียงอะคูสติกที่ออกแบบมาโดยเฉพาะ พร้อมไดรเวอร์แบบอัปเกรดที่ให้เสียง Beats ที่สมดุลทรงพลัง",
+        "ระบบเสียงตามตำแหน่งสำหรับคุณพร้อมการติดตามศีรษะแบบไดนามิกจะพาคุณไปดื่มด่ำในโลกของเสียงเพลง ภาพยนตร์ และเกม ติดตามการเคลื่อนไหวของศีรษะเพื่อประสบการณ์ในการฟังเสียงแบบกระหึ่มอินเทอร์แอกทีฟรอบทิศทาง¹",
+        "ฟองน้ำหูฟัง UltraPlush แบบ On-Ear ให้ความสบายยาวนานและทนทาน ด้วยคุณสมบัติสุดยอดการตัดเสียงรบกวนที่ปิดกั้นเสียงภายนอก",
+        "ส่วนโค้งเหนือศีรษะที่ยืดหยุ่นและที่ครอบหูซึ่งออกแบบมาได้มุมพอดีลงตัวให้สัมผัสการสวมใส่ที่สบายและกระชับเข้าล็อค ให้คุณภาพเสียงที่คมชัดและพอเหมาะกับหูของคุณ",
+        "ดีไซน์ของเฮดโฟนที่โอบรับศีรษะได้อย่างพอดี มีน้ำหนักเบาเพียง 217 กรัม ทำให้ลืมไปเลยว่ากำลังสวมใส่อยู่",
+        "Fast Fuel หมายถึงการชาร์จ 10 นาทีช่วยให้ฟังเพลงได้นานสูงสุด 5 ชั่วโมง⁴",
+        "Fast Fuel หมายถึงการชาร์จ 10 นาทีช่วยให้ฟังเพลงได้นานสูงสุด 5 ชั่วโมง⁴",
+      ],
+    },
+    {
+      title: "สิ่งที่มีมาให้ในกล่อง",
+      description: [
+        "เฮดโฟน Beats Solo 4",
+        "เคสพกพา",
+        "สาย USB-C เป็น USB-C สำหรับชาร์จและเล่นเสียง",
+        "สายสัญญาณเสียงแบบอนาล็อก 3.5 มม.",
+        "คู่มือเริ่มต้นแบบรวดเร็ว",
+        "ใบรับประกัน",
+        "อะแดปเตอร์แปลงไฟ USB-C จำหน่ายแยกต่างหาก",
+        "เฮดโฟน Beats Solo 4",
+        "เฮดโฟน Beats Solo 4",
+      ],
+    },
+  ],
+  spec: [
+    {
+      title: "ข้อมูลทางเทคนิค",
+      description: [
+        "ความสูง: 6.8 ซม./2.7 นิ้ว",
+        "ความยาว: 17.7 ซม./6.9 นิ้ว",
+        "น้ำหนัก: 217 กรัม/7.65 ออนซ์",
+        "คุณสมบัติอื่นๆ: Bluetooth, ไร้สาย",
+        "ฟอร์มแฟกเตอร์: ครอบหู",
+        "การใช้งานร่วมกับ Bluetooth: Bluetooth 5.3",
+        "แหล่งพลังงาน: พลังงานแบตเตอรี่",
+        "แบตเตอรี่: ลิเธียมไอออนชนิดชาร์จซ้ำได้",
+      ],
+    },
+    {
+      title: "ข้อมูลผู้ผลิต",
+      description: ["หมายเลข UPC หรือ EAN: 195949121715"],
+    },
+  ],
 };
 
 export const products: Array<product_type> = [
   {
     id: "011111",
-    image:
+    image_cover:
       "https://mercular.s3.ap-southeast-1.amazonaws.com/images/products/2024/05/Product/asus-tuf-f17-fx707zc4-hx080w-gaming-notebook-front-view.jpg",
+    image: [
+      "https://mercular.s3.ap-southeast-1.amazonaws.com/images/products/2024/05/Product/asus-tuf-f17-fx707zc4-hx080w-gaming-notebook-front-view.jpg",
+      "https://mercular.s3.ap-southeast-1.amazonaws.com/images/products/2024/05/Product/asus-tuf-f17-fx707zc4-hx080w-gaming-notebook-front-view.jpg",
+      "https://mercular.s3.ap-southeast-1.amazonaws.com/images/products/2024/05/Product/asus-tuf-f17-fx707zc4-hx080w-gaming-notebook-front-view.jpg",
+    ],
+    slug: "asus-tuf-f17-fx707-zc4-hx080-w-gaming-notebook",
     name: "โน๊ตบุ๊ค Asus TUF F17 FX707ZC4-HX080W Gaming Notebook",
     type: "notebook",
     properties: {
@@ -37,11 +120,16 @@ export const products: Array<product_type> = [
     keyword: ["gaming", "เล่นเกม", "จอ120hz"],
     price: 39000,
     stock: 40,
+    product_detail: product_detail_mockdata,
   },
   {
     id: "011112",
-    image:
+    image_cover:
       "https://mercular.s3.ap-southeast-1.amazonaws.com/images/products/2023/09/Product/gigabyte-aorus-16-bsf-73th654sh-gaming-notebook-front-view.jpg",
+    image: [
+      "https://mercular.s3.ap-southeast-1.amazonaws.com/images/products/2023/09/Product/gigabyte-aorus-16-bsf-73th654sh-gaming-notebook-front-view.jpg",
+    ],
+    slug: "gigabyte-aorus-16-bsf-73-th654-sh-gaming-notebook",
     name: "โน๊ตบุ๊ค Gigabyte AORUS 16 BSF-73TH654SH Gaming Notebook",
     type: "notebook",
     properties: {
@@ -65,11 +153,16 @@ export const products: Array<product_type> = [
     keyword: ["work", "ธุรกิจ", "15inch"],
     price: 28000,
     stock: 25,
+    product_detail: product_detail_mockdata,
   },
   {
     id: "011113",
-    image:
+    image_cover:
       "https://mercular.s3.ap-southeast-1.amazonaws.com/images/products/2024/09/Computer/M1504FA-NJ548WF-1.jpg",
+    image: [
+      "https://mercular.s3.ap-southeast-1.amazonaws.com/images/products/2024/09/Computer/M1504FA-NJ548WF-1.jpg",
+    ],
+    slug: "asus-vivobook-go-15-m1504-fa-nj548-wf-notebook",
     name: "โน๊ตบุ๊ค Asus Vivobook Go 15 M1504FA-NJ548WF Notebook",
     type: "notebook",
     properties: {
@@ -93,11 +186,16 @@ export const products: Array<product_type> = [
     keyword: ["work", "แล็ปท็อปบางเบา", "2-in-1"],
     price: 35000,
     stock: 30,
+    product_detail: product_detail_mockdata,
   },
   {
     id: "011114",
-    image:
+    image_cover:
       "https://mercular.s3.ap-southeast-1.amazonaws.com/images/products/2024/07/Computer/UX8406MA-PZ731WF-1.jpg",
+    image: [
+      "https://mercular.s3.ap-southeast-1.amazonaws.com/images/products/2024/07/Computer/UX8406MA-PZ731WF-1.jpg",
+    ],
+    slug: "asus-zenbook-duo-ux8406-ma-pz731-wf-notebook",
     name: "โน๊ตบุ๊ค Asus Zenbook Duo UX8406MA-PZ731WF Notebook",
     type: "notebook",
     properties: {
@@ -121,11 +219,16 @@ export const products: Array<product_type> = [
     keyword: ["gaming", "เล่นเกม", "คีย์บอร์ด RGB"],
     price: 45000,
     stock: 15,
+    product_detail: product_detail_mockdata,
   },
   {
     id: "011115",
-    image:
+    image_cover:
       "https://mercular.s3.ap-southeast-1.amazonaws.com/images/products/2024/08/Computer/D5406UA-PP728WF-1.jpg",
+    image: [
+      "https://mercular.s3.ap-southeast-1.amazonaws.com/images/products/2024/08/Computer/D5406UA-PP728WF-1.jpg",
+    ],
+    slug: "asus-vivobook-s14-d5406-ua-pp728-wf-notebook-neutral-black",
     name: "โน๊ตบุ๊ค Asus Vivobook S14 D5406UA-PP728WF Notebook Neutral Black",
     type: "notebook",
     properties: {
@@ -149,11 +252,16 @@ export const products: Array<product_type> = [
     keyword: ["work", "business", "14inch"],
     price: 55000,
     stock: 10,
+    product_detail: product_detail_mockdata,
   },
   {
     id: "021111",
-    image:
+    image_cover:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1fmYBOZ68SvD4xYWaD8_8u4k2YiD5oSr7Qg&s",
+    image: [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1fmYBOZ68SvD4xYWaD8_8u4k2YiD5oSr7Qg&s",
+    ],
+    slug: "dell-optiplex-7080",
     name: "Dell Optiplex 7080",
     type: "computer",
     properties: {
@@ -169,11 +277,16 @@ export const products: Array<product_type> = [
     keyword: ["business", "desktop", "i7"],
     price: 32000,
     stock: 20,
+    product_detail: product_detail_mockdata,
   },
   {
     id: "021112",
-    image:
+    image_cover:
       "https://addin.co.th/wp-content/uploads/2020/05/package-work-station-zebra-two-gen-four-mini-one.jpg",
+    image: [
+      "https://addin.co.th/wp-content/uploads/2020/05/package-work-station-zebra-two-gen-four-mini-one.jpg",
+    ],
+    slug: "hp-z2-mini-g5",
     name: "HP Z2 Mini G5",
     type: "computer",
     properties: {
@@ -189,11 +302,16 @@ export const products: Array<product_type> = [
     keyword: ["workstation", "mini PC", "powerful"],
     price: 48000,
     stock: 12,
+    product_detail: product_detail_mockdata,
   },
   {
     id: "021113",
-    image:
+    image_cover:
       "https://cdn.shoplightspeed.com/shops/662820/files/59782353/650x750x2/apple-imac-24-apple-m3-8-cpu-10gpu-8-gb-256-gb-ssd.jpg",
+    image: [
+      "https://cdn.shoplightspeed.com/shops/662820/files/59782353/650x750x2/apple-imac-24-apple-m3-8-cpu-10gpu-8-gb-256-gb-ssd.jpg",
+    ],
+    slug: "apple-i-mac-24-inch-m1",
     name: "Apple iMac 24-inch M1",
     type: "computer",
     properties: {
@@ -209,11 +327,16 @@ export const products: Array<product_type> = [
     keyword: ["all-in-one", "Mac", "M1"],
     price: 56000,
     stock: 8,
+    product_detail: product_detail_mockdata,
   },
   {
     id: "021114",
-    image:
+    image_cover:
       "https://down-th.img.susercontent.com/file/ebf6fcd1f31cde5156effb924c526a53",
+    image: [
+      "https://down-th.img.susercontent.com/file/ebf6fcd1f31cde5156effb924c526a53",
+    ],
+    slug: "asus-rog-strix-ga15",
     name: "Asus ROG Strix GA15",
     type: "computer",
     properties: {
@@ -229,11 +352,16 @@ export const products: Array<product_type> = [
     keyword: ["gaming", "desktop", "RGB"],
     price: 46000,
     stock: 18,
+    product_detail: product_detail_mockdata,
   },
   {
     id: "021115",
-    image:
+    image_cover:
       "https://down-th.img.susercontent.com/file/dadaee9fa598e49fe4765de6e7859cb4",
+    image: [
+      "https://down-th.img.susercontent.com/file/dadaee9fa598e49fe4765de6e7859cb4",
+    ],
+    slug: "lenovo-legion-t5",
     name: "Lenovo Legion T5",
     type: "computer",
     properties: {
@@ -249,11 +377,16 @@ export const products: Array<product_type> = [
     keyword: ["gaming", "RTX 3070", "desktop"],
     price: 62000,
     stock: 10,
+    product_detail: product_detail_mockdata,
   },
   {
     id: "031111",
-    image:
+    image_cover:
       "https://images.samsung.com/is/image/samsung/p6pim/th/ls28bg700eexxt/gallery/th-odyssey-g7-g70b-ls28bg700eexxt-535250548?$650_519_PNG$",
+    image: [
+      "https://images.samsung.com/is/image/samsung/p6pim/th/ls28bg700eexxt/gallery/th-odyssey-g7-g70b-ls28bg700eexxt-535250548?$650_519_PNG$",
+    ],
+    slug: "samsung-odyssey-g7",
     name: "Samsung Odyssey G7",
     type: "monitor",
     properties: {
@@ -274,11 +407,16 @@ export const products: Array<product_type> = [
     keyword: ["gaming", "จอโค้ง", "QHD"],
     price: 23000,
     stock: 25,
+    product_detail: product_detail_mockdata,
   },
   {
     id: "031112",
-    image:
+    image_cover:
       "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/88116e53-3697-4765-a72e-68847e26a6b6/md07000225-large01-jpg",
+    image: [
+      "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/88116e53-3697-4765-a72e-68847e26a6b6/md07000225-large01-jpg",
+    ],
+    slug: "lg-ultra-fine-5-k",
     name: "LG UltraFine 5K",
     type: "monitor",
     properties: {
@@ -299,11 +437,16 @@ export const products: Array<product_type> = [
     keyword: ["professional", "5K", "27inch"],
     price: 45000,
     stock: 7,
+    product_detail: product_detail_mockdata,
   },
   {
     id: "031113",
-    image:
+    image_cover:
       "https://media-cdn.bnn.in.th/40476/DELL-MONITOR-UltraSharp-U2720Q-IPS-4K-60Hz-1-square_medium.jpg",
+    image: [
+      "https://media-cdn.bnn.in.th/40476/DELL-MONITOR-UltraSharp-U2720Q-IPS-4K-60Hz-1-square_medium.jpg",
+    ],
+    slug: "dell-ultra-sharp-u2720-q",
     name: "Dell UltraSharp U2720Q",
     type: "monitor",
     properties: {
@@ -324,11 +467,16 @@ export const products: Array<product_type> = [
     keyword: ["work", "4K", "27inch"],
     price: 29000,
     stock: 20,
+    product_detail: product_detail_mockdata,
   },
   {
     id: "031114",
-    image:
+    image_cover:
       "https://www.jib.co.th/img_master/product/original/20230706151628_60574_287_1.jpg",
+    image: [
+      "https://www.jib.co.th/img_master/product/original/20230706151628_60574_287_1.jpg",
+    ],
+    slug: "acer-nitro-vg270",
     name: "Acer Nitro VG270",
     type: "monitor",
     properties: {
@@ -349,11 +497,16 @@ export const products: Array<product_type> = [
     keyword: ["gaming", "FHD", "IPS"],
     price: 12000,
     stock: 30,
+    product_detail: product_detail_mockdata,
   },
   {
     id: "031115",
-    image:
+    image_cover:
       "https://www.asus.com/media/global/gallery/fbjfzudhdbnrqjme_setting_xxx_0_90_end_800.png",
+    image: [
+      "https://www.asus.com/media/global/gallery/fbjfzudhdbnrqjme_setting_xxx_0_90_end_800.png",
+    ],
+    slug: "asus-pro-art-pa32-ucx",
     name: "ASUS ProArt PA32UCX",
     type: "monitor",
     properties: {
@@ -374,11 +527,16 @@ export const products: Array<product_type> = [
     keyword: ["professional", "HDR", "32inch"],
     price: 76000,
     stock: 5,
+    product_detail: product_detail_mockdata,
   },
   {
     id: "041112",
-    image:
+    image_cover:
       "https://res.cloudinary.com/itcity-production/image/upload/f_jpg,q_80,w_1000/v1682666509/products/PRD202301003846/skus/n7s4tfxmdeyxjqg284fs.jpg",
+    image: [
+      "https://res.cloudinary.com/itcity-production/image/upload/f_jpg,q_80,w_1000/v1682666509/products/PRD202301003846/skus/n7s4tfxmdeyxjqg284fs.jpg",
+    ],
+    slug: "epson-eco-tank-l3110",
     name: "Epson EcoTank L3110",
     type: "printer",
     properties: {
@@ -395,11 +553,16 @@ export const products: Array<product_type> = [
     keyword: ["Inkjet", "A4", "All-in-One"],
     price: 4500,
     stock: 60,
+    product_detail: product_detail_mockdata,
   },
   {
     id: "041113",
-    image:
+    image_cover:
       "https://www.jib.co.th/img_master/product/original/2020040417512837864_1.png",
+    image: [
+      "https://www.jib.co.th/img_master/product/original/2020040417512837864_1.png",
+    ],
+    slug: "hp-laser-jet-pro-m15w",
     name: "HP LaserJet Pro M15w",
     type: "printer",
     properties: {
@@ -416,11 +579,16 @@ export const products: Array<product_type> = [
     keyword: ["Laser", "Wireless", "A4"],
     price: 5200,
     stock: 40,
+    product_detail: product_detail_mockdata,
   },
   {
     id: "041114",
-    image:
+    image_cover:
       "https://img.advice.co.th/images_nas/pic_product4/A0109679/A0109679OK_BIG_1.jpg",
+    image: [
+      "https://img.advice.co.th/images_nas/pic_product4/A0109679/A0109679OK_BIG_1.jpg",
+    ],
+    slug: "brother-dcp-t510-w",
     name: "Brother DCP-T510W",
     type: "printer",
     properties: {
@@ -437,11 +605,16 @@ export const products: Array<product_type> = [
     keyword: ["Inkjet", "ถ่ายเอกสาร", "Wireless"],
     price: 5500,
     stock: 30,
+    product_detail: product_detail_mockdata,
   },
   {
     id: "041115",
-    image:
+    image_cover:
       "https://www.printer-thailand.com/1078-2782-thickbox/canon-imageclass-mf445dw-4-in-1-mono-multifunction-printer-38ppm.jpg",
+    image: [
+      "https://www.printer-thailand.com/1078-2782-thickbox/canon-imageclass-mf445dw-4-in-1-mono-multifunction-printer-38ppm.jpg",
+    ],
+    slug: "canon-image-class-mf445dw",
     name: "Canon imageCLASS MF445dw",
     type: "printer",
     properties: {
@@ -458,5 +631,6 @@ export const products: Array<product_type> = [
     keyword: ["Laser", "A4", "All-in-One"],
     price: 16000,
     stock: 15,
+    product_detail: product_detail_mockdata,
   },
 ];

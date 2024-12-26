@@ -64,7 +64,7 @@ export  const productTypeListType = [
     },
     {
       id: '44444',
-      type: "com_set",
+      type: "computer",
       name: "Computer",
       caption: " เร็วแรง ทันสมัย ประสิทธิภาพสูงสุด",
       imageUrl: 'https://www.hardwarezone.com.sg/thumbs/685089/og.jpg?9348'
