@@ -3,6 +3,16 @@ import Content from "./Content";
 import { product_type, products } from "@/api/product_data";
 import { notFound } from "next/navigation";
 
+export async function generateStaticParams() {
+  // แสดง slug ที่ต้องการสร้างแบบ static
+  const slugs = ["product1", "product2", "product3"];
+  
+  return slugs.map((slug) => ({
+    slug,
+  }));
+}
+
+
 export default async function Page({
   params,
 }: {
