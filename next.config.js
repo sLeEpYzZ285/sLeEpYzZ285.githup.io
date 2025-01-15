@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: 'export',
+  output: 'export',
   // ปรับ basePath ตาม repository ที่ใช้
   // basePath: '/sleepyzz285.github.io',
   // assetPrefix: '/sLeEpYzZ285.githup.io/',
