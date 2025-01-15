@@ -274,12 +274,12 @@ export const products: Array<product_type> = [
   {
     id: "011113",
     image_cover:
-      "https://rayong-oa.com/wp-content/uploads/2024/06/1_402.jpg",
+      "https://media-cdn.bnn.in.th/308373/dell-insprion-14-2in1-silver-1-square_medium.jpg",
     image: [
-      "https://rayong-oa.com/wp-content/uploads/2024/06/2_399.jpg",
-      "https://rayong-oa.com/wp-content/uploads/2024/06/4_347.jpg",
-      "https://rayong-oa.com/wp-content/uploads/2024/06/5_265.jpg",
-      "https://rayong-oa.com/wp-content/uploads/2024/06/2_399.jpg",
+      "https://media-cdn.bnn.in.th/308373/dell-insprion-14-2in1-silver-1-square_medium.jpg",
+      "https://media-cdn.bnn.in.th/308374/dell-insprion-14-2in1-silver-2-square_medium.jpg",
+      "https://media-cdn.bnn.in.th/308375/dell-insprion-14-2in1-silver-3-square_medium.jpg",
+      "https://media-cdn.bnn.in.th/308376/dell-insprion-14-2in1-silver-4-square_medium.jpg",
     ],
     slug: "nb-dell-inspiron-2-in-1-7430-ic7430fd64t0010gth",
     name: "โน๊ตบุ๊ค NB DELL INSPIRON 2-IN-1 7430-IC7430FD64T001OGTH (Platinum Silver)",
@@ -365,15 +365,15 @@ export const products: Array<product_type> = [
   {
     id: "011114",
     image_cover:
-      "https://rayong-oa.com/wp-content/uploads/2024/06/dell-gaming-notebook-gn55303w0cp001ogth-g15-ds-w-dark-shadow-gray-1-square_medium.webp",
+      "https://media-cdn.bnn.in.th/417909/dell-g15-ogn553550001gth-dark-shadow-gray-1-square_medium.jpg",
     image: [
-      "https://rayong-oa.com/wp-content/uploads/2024/06/dell-gaming-notebook-gn55303w0cp001ogth-g15-ds-w-dark-shadow-gray-1-square_medium.webp",
-      "https://rayong-oa.com/wp-content/uploads/2024/06/dell-gaming-notebook-gn55303w0cp001ogth-g15-ds-w-dark-shadow-gray-2-square_medium.webp",
-      "https://rayong-oa.com/wp-content/uploads/2024/06/dell-gaming-notebook-gn55303w0cp001ogth-g15-ds-w-dark-shadow-gray-3-square_medium.webp",
-      "https://rayong-oa.com/wp-content/uploads/2024/06/dell-gaming-notebook-gn55303w0cp001ogth-g15-ds-w-dark-shadow-gray-4-square_medium.webp",
-      "https://rayong-oa.com/wp-content/uploads/2024/06/dell-gaming-notebook-gn55303w0cp001ogth-g15-ds-w-dark-shadow-gray-5-square_medium.webp",
-      "https://rayong-oa.com/wp-content/uploads/2024/06/dell-gaming-notebook-gn55303w0cp001ogth-g15-ds-w-dark-shadow-gray-6-square_medium.webp",
-      "https://rayong-oa.com/wp-content/uploads/2024/06/dell-gaming-notebook-gn55303w0cp001ogth-g15-ds-w-dark-shadow-gray-7-square_medium.webp",
+      "https://media-cdn.bnn.in.th/417909/dell-g15-ogn553550001gth-dark-shadow-gray-1-thumbnail.jpg",
+      "https://media-cdn.bnn.in.th/417910/dell-g15-ogn553550001gth-dark-shadow-gray-2-thumbnail.jpg",
+      "https://media-cdn.bnn.in.th/417911/dell-g15-ogn553550001gth-dark-shadow-gray-3-thumbnail.jpg",
+      "https://media-cdn.bnn.in.th/417915/dell-g15-ogn553550001gth-dark-shadow-gray-7-square_medium.jpg",
+      "https://media-cdn.bnn.in.th/417912/dell-g15-ogn553550001gth-dark-shadow-gray-4-thumbnail.jpg",
+      "https://media-cdn.bnn.in.th/417913/dell-g15-ogn553550001gth-dark-shadow-gray-5-thumbnail.jpg",
+      "https://media-cdn.bnn.in.th/417914/dell-g15-ogn553550001gth-dark-shadow-gray-6-thumbnail.jpg",
     ],
     slug: "nb-dell-g15-gn55303w0cp001ogth",
     name: "NB DELL G15-GN55303W0CP001OGTH(Dark Shadow Gray)",
