@@ -365,15 +365,15 @@ export const products: Array<product_type> = [
   {
     id: "011114",
     image_cover:
-      "https://media-cdn.bnn.in.th/417909/dell-g15-ogn553550001gth-dark-shadow-gray-1-square_medium.jpg",
+      "https://www.jib.co.th/img_master/product/original/20231027170411_63227_287_1.jpg",
     image: [
-      "https://media-cdn.bnn.in.th/417909/dell-g15-ogn553550001gth-dark-shadow-gray-1-thumbnail.jpg",
-      "https://media-cdn.bnn.in.th/417910/dell-g15-ogn553550001gth-dark-shadow-gray-2-thumbnail.jpg",
-      "https://media-cdn.bnn.in.th/417911/dell-g15-ogn553550001gth-dark-shadow-gray-3-thumbnail.jpg",
-      "https://media-cdn.bnn.in.th/417915/dell-g15-ogn553550001gth-dark-shadow-gray-7-square_medium.jpg",
-      "https://media-cdn.bnn.in.th/417912/dell-g15-ogn553550001gth-dark-shadow-gray-4-thumbnail.jpg",
-      "https://media-cdn.bnn.in.th/417913/dell-g15-ogn553550001gth-dark-shadow-gray-5-thumbnail.jpg",
-      "https://media-cdn.bnn.in.th/417914/dell-g15-ogn553550001gth-dark-shadow-gray-6-thumbnail.jpg",
+      "https://www.jib.co.th/img_master/product/original/20231027170411_63227_287_1.jpg",
+      "https://www.jib.co.th/img_master/product/original/2023102717044163227_1.jpg",
+      "https://www.jib.co.th/img_master/product/original/2023102717044163227_2.jpg",
+      "https://www.jib.co.th/img_master/product/original/2023102717044163227_4.jpg",
+      "https://www.jib.co.th/img_master/product/original/2023102717044163227_6.jpg",
+      "https://www.jib.co.th/img_master/product/original/2023102717044163227_7.jpg",
+      "https://www.jib.co.th/img_master/product/original/2023102717044163227_8.jpg",
     ],
     slug: "nb-dell-g15-gn55303w0cp001ogth",
     name: "NB DELL G15-GN55303W0CP001OGTH(Dark Shadow Gray)",
