@@ -109,7 +109,7 @@ export default function PromotionCard() {
           removeWrapper
           alt="Relaxing app background"
           className="z-0 w-full h-full object-cover"
-          src="https://cdn.mercular.com/images/homepage/sections/8/spaces/11/1727687490709_MW_HP.jpg"
+          src="https://www.asus.com/WebsitesBanner/TH/banners/zi4ktdpz4vmpkqgf/zi4ktdpz4vmpkqgf-4_0_desktop_4_1X.jpg?webp"
         />
         <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
           {/* <div className="flex flex-grow gap-2 items-center">

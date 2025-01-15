@@ -35,7 +35,7 @@ export default function ParallaxSlide() {
           >
             <Image
               className="rounded-xl w-full !aspect-square overflow-hidden object-cover"
-              src={data.image} // ตรวจสอบว่าใช้ imageUrl ที่ถูกต้อง
+              src={data.image_cover} // ตรวจสอบว่าใช้ imageUrl ที่ถูกต้อง
               alt={data.name} 
               width={150}
               height={150}
