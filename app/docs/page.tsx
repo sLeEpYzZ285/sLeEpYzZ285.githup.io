@@ -6,7 +6,7 @@ import { EmblaOptionsType } from "embla-carousel";
 export default function DocsPage() {
   return (
     <div className={title()}>
-      DocsPage
+      Test Page
     </div>
   );
 }
