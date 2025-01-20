@@ -202,7 +202,7 @@ export default function Content({ data }: { data: product_type | undefined }) {
       </section>
 
       <section>
-        <h1 className="text-4xl font-semibold mb-5">สเปค</h1>
+        <h1 className="text-4xl font-semibold mb-5">รายละเอียดสินค้า</h1>
         <ProppertiesTable properties={data?.properties} />
 
         <div className="mt-5"></div>
@@ -238,7 +238,7 @@ export default function Content({ data }: { data: product_type | undefined }) {
           <AccordionItem
             key="2"
             aria-label="spec"
-            title={<h1 className="text-4xl font-semibold">สเปค</h1>}
+            title={<h1 className="text-4xl font-semibold">ข้อมูลทางเทคนิค</h1>}
           >
             <div className="mt-5"></div>
             {data?.product_detail?.spec.map((data, index) => (
