@@ -81,6 +81,13 @@ export default function Home() {
                 width={180}
                 height={80}
               />
+                <Image
+                  className="me-8"
+                  src={"logo/Dell-Logo.svg"}
+                  alt="asuslogo"
+                  width={150}
+                  height={60}
+                />
               <Image
                 className="me-8"
                 src={"logo/Asus-Logo.svg"}

@@ -46,7 +46,7 @@ export default function HitProduct({
               {data.name}
             </p>
             <small className="text-default-500 mt-3 mb-2">
-              สินค้าคงเหลือ {data.stock} ชิ้น
+              สินค้า {data.stock}
             </small>
             <div className="mt-2">
               <Chip

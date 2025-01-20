@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: {
-    icon: "logo_icon.ico",
+    icon: "roa_old_.ico",
   },
 };
 
