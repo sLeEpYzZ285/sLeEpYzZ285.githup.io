@@ -6,6 +6,7 @@
 		"dev": "next dev --turbo",
 		"build": "next build",
 		"start": "next start",
+		"plesk-fix": "nextjs-plesk-fix",
 		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix",
 		"deploy": "gh-pages -d out"
 	},
@@ -33,6 +34,7 @@
 		"intl-messageformat": "^10.5.0",
 		"next": "14.2.4",
 		"next-themes": "^0.2.1",
+		"nextjs-plesk-fix": "^1.0.0",
 		"plyr-react": "^5.3.0",
 		"react": "18.3.1",
 		"react-awesome-reveal": "^4.2.14",
