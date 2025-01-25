@@ -109,6 +109,20 @@ export default function Home() {
                 width={160}
                 height={80}
               />
+              <Image 
+              className="me-8"
+              src={"logo/epson-Logo.svg"}
+              alt="epsonlogo"
+              width={130}
+              height={80}
+              />
+              <Image
+              className="me-8"
+              src={"logo/brother-Logo.svg"}
+              alt="brother-logo"
+              width={130}
+              height={80}
+              />
             </div>
           </Marquee>
         </Fade>
