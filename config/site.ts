@@ -2,7 +2,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "Rayong OA",
-  description: "ระยอง โอเอ ร้านคอมระยอง ระยอง ร้านคอม",
+  description: "ระยอง โอเอ ร้านคอมระยอง ร้านITระยอง ร้านคอม ศูนย์คอมพิวเตอร์ ร้านซ่อมคอม ซ่อมคอมพิวเตอร์ ศูนย์บริการปริ้นเตอร์ EPSON BROTHER Printer ปริ้นเตอร์ระยอง ร้านซ่อมปริ้นเตอร์",
   navItems: [
     {
       label: "หน้าหลัก",
@@ -21,6 +21,10 @@ export const siteConfig = {
     //   href: "/blog",
     // },
     {
+      label: "ผลงานของเรา",
+      href: "/ourwork"
+    },
+    {
       label: "เกี่ยวกับเรา",
       href: "/about",
     },
@@ -33,6 +37,10 @@ export const siteConfig = {
     {
       label: "สินค้าทั้งหมด",
       href: "/products",
+    },
+    {
+      label: "ผลงานของเรา",
+      href: "/ourwork",
     },
     {
       label: "เกี่ยวกับเรา",
