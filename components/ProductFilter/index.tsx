@@ -11,6 +11,8 @@ import type { Selection } from "@nextui-org/react";
 import SortButton from "./SortButton";
 import TypeButton from "./TypeButton";
 
+
+// Product types for shop
 const product_type = [
   {
     key: "nootebook",
@@ -31,12 +33,37 @@ const product_type = [
   },
 ];
 
+// New gallery categories
+// Make sure to export this constant
+export const gallery_categories = [
+  {
+    key: "event",
+    text: "กิจกรรมพิเศษ",
+  },
+  {
+    key: "study",
+    text: "การศึกษา",
+  },
+  {
+    key: "society",
+    text: "สังคม",
+  },
+  {
+    key: "donation",
+    text: "การบริจาค",
+  },
+  {
+    key: "volunteer",
+    text: "จิตอาสา",
+  }
+];
+
 interface ProductFilterProps {
   onFilterChange: (selectedKeys: Set<string>) => void;
   onSortChange: (sortKey: string) => void;
 }
 
-export default function ProductFilter({ onFilterChange ,onSortChange }: ProductFilterProps) {
+export default function ProductFilter({ onFilterChange, onSortChange }: ProductFilterProps) {
   return (
     <>
       <div className="flex gap-6">

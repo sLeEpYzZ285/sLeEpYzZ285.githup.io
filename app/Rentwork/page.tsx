@@ -1,289 +1,140 @@
 "use client";
+
 import { title } from "@/components/primitives";
-import Marquee from "react-fast-marquee";
-import { Button } from "@nextui-org/button";
-import EmblaCarousel from "@/components/PromotionSlider/EmblaCarousel";
-import { EmblaOptionsType } from "embla-carousel";
-import VideoPlayer from "@/components/VideoPlayer";
-import { products } from "@/api/product_data";
-import { Divider } from "@nextui-org/react";
-// import PhotoSlider from "@/components/PhotoSlider";
-// import ParallaxSlide from "@/components/ParallaxSlide";
-// import PromotionCard from "./components/PromotinCard";
-// import CardProduct from "@/components/CardProduct";
-// import HitProduct from "./components/HitProduct";
-// import ProductTypeBanner from "./components/ProductTypeBanner";
-import { Card, CardBody, CardFooter, Image } from "@nextui-org/react";
-import Link from "next/link";
-import { Fade, Hinge, JackInTheBox, Slide, Zoom } from "react-awesome-reveal";
-import { promotion_photo } from "@/api/promotion";
+import { Image } from "@nextui-org/react";
+import { motion, AnimatePresence } from 'framer-motion';
+import { Slide, Zoom } from "react-awesome-reveal";
+import { useState } from "react";
 
-const OPTIONS: EmblaOptionsType = { loop: true };
-const SLIDE_COUNT = 5;
-const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
-
-const notebook = products.filter((products) => products.type === "notebook");
-const monitor = products.filter((products) => products.type === "monitor");
-const printer = products.filter((products) => products.type === "printer");
+// Work gallery data
+const workGallery = [
+  {
+    id: 1,
+    src: "/photo/reeent.png",
+    category: "rental",
+    title: "บริการเช่าอุปกรณ์",
+    description: "บริการให้เช่าคอมพิวเตอร์และอุปกรณ์ไอที"
+  },
+  {
+    id: 2,
+    src: "/photo/technical.jpg",
+    category: "service",
+    title: "บริการด้านเทคนิค",
+    description: "บริการซ่อมและดูแลอุปกรณ์"
+  },
+  {
+    id: 3,
+    src: "/photo/install.jpg",
+    category: "installation",
+    title: "บริการติดตั้ง",
+    description: "บริการติดตั้งระบบและอุปกรณ์"
+  },
+  {
+    id: 4,
+    src: "/photo/printer-service.jpg",
+    category: "printer",
+    title: "บริการเครื่องพิมพ์",
+    description: "บริการเช่าและดูแลเครื่องพิมพ์"
+  },
+  {
+    id: 5,
+    src: "/photo/network.jpg",
+    category: "network",
+    title: "ระบบเน็ตเวิร์ค",
+    description: "บริการติดตั้งและดูแลระบบเครือข่าย"
+  },
+  {
+    id: 6,
+    src: "/photo/cctv.jpg",
+    category: "security",
+    title: "ระบบกล้องวงจรปิด",
+    description: "บริการติดตั้งระบบกล้องวงจรปิด"
+  }
+];
 
 export default function RentWork() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
-    <>
-      {/* RAYONG OA TEXT ON TOP */}
+    <div className="min-h-screen bg-background dark:bg-background/95">
+
+      {/* Categories Section */}
       <section>
-        <Slide direction="down" triggerOnce>
-          <div className="text-center mb-4">
-            <div className="flex flex-wrap justify-center items-center">
-              <span className="text-2xl  ">สถานีไอที</span>
-              <div className="mx-5"></div>
-              <div className="flex flex-col">
-                <h1
-                  className={`${title({
-                    color: "blue",
-                  })} !text-5xl md:!text-8xl !font-extrabold`}
-                >
-                  RAYONG OA
-                </h1>
-                <h1
-                  className={`${title({
-                    color: "yellow",
-                  })} !text-4xl `}
-                >
-                  AND SERVICE
-                </h1>
-              </div>
-
-              <div className="mx-5"></div>
-              <span className="text-2xl ">มีดีเรื่องบริการ</span>
-            </div>
-          </div>
-        </Slide>
-      </section>
-   
-      <section className="mt-[70px]">
-        <div className="mb-5">
-          <Slide direction="right" duration={1500} triggerOnce>
-            <h1 className="text-2xl font-base">
-              <span className="text-primary font-bold">จอคอมพิวเตอร์</span> |
-              ภาพสวย คมชัด สีสันสดใส
-            </h1>
-          </Slide>
-        </div>
-        <Divider />
-        <Slide triggerOnce direction="up">
-          <div className="flex flex-nowrap  snap-x snap-mandatory   scroll-smooth overflow-x-scroll overflow-hidden   lg:grid grid-cols-12 pb-8 mt-10 gap-3  ">
-            <Link
-              className="snap-center snap-always mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
-              href={`/products?type=monitor`}
-            >
-              <Card
-                shadow="sm"
-                
-                isPressable className="h-full w-full"
+        <div className="container mx-auto px-4">
+          <Zoom triggerOnce>
+            <h2 className="text-2xl font-bold text-center mb-12 dark:text-white">
+              บริการของเรา
+            </h2>
+          </Zoom>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {workGallery.map((work) => (
+              <motion.div
+                key={work.id}
+                layout
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="group cursor-pointer"
+                onClick={() => setSelectedImage(work.src)}
               >
-                <CardBody className="overflow-visible p-0">
+                <div className="relative aspect-video overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
                   <Image
-                    shadow="sm"
-                    radius="lg"
-                    width="100%"
-                    height="100%"
-                    alt="printer"
-                    className="w-full !aspect-[4/5] object-cover overflow-hidden h-full"
-                    src="https://image.benq.com/is/image/benqco/Gaming-Slider-M?$ResponsivePreset$"
+                    src={work.src}
+                    alt={work.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    width={600}
+                    height={400}
                   />
-                </CardBody>
-                <CardFooter className="text-small justify-between">
-                  <b>จอคอมพิวเตอร์</b>
-                  <p className="text-default-500">ดูทั้งหมด</p>
-                </CardFooter>
-              </Card>
-            </Link>
-
-            {monitor.slice(0, 5).map((data) => (
-              <Link
-                className="mx-w-[350px] min-w-[180px] snap-center snap-always col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 "
-                href={`/${data.slug}`}
-                key={data.id}
-              >
-               
-              </Link>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <h3 className="text-white text-xl font-semibold mb-2">{work.title}</h3>
+                      <p className="text-gray-200 text-sm">{work.description}</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
-        </Slide>
-      </section>
-
-      <section className="mt-[70px]">
-        <div className="mb-5">
-          <Slide direction="right" duration={1500} triggerOnce>
-            <h1 className="text-2xl font-base">
-              <span className="text-primary font-bold">Notebook</span> | เร็วแรง
-              ทันสมัย ประสิทธิภาพสูงสุด
-            </h1>
-          </Slide>
         </div>
-        <Divider />
-        <Slide triggerOnce direction="up">
-          <div className="flex flex-nowrap  snap-x  snap-mandatory  scroll-smooth overflow-x-scroll overflow-hidden   lg:grid grid-cols-12 pb-8 mt-10 gap-3  ">
-            <Link
-              className="snap-center snap-always mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
-              href={`/products?type=notebook`}
-            >
-              <Card shadow="sm" isPressable className="h-full w-full">
-                <CardBody className="overflow-visible p-0">
-                  <Image
-                    shadow="sm"
-                    radius="lg"
-                    width="100%"
-                    height="100%"
-                    alt="printer"
-                    className="w-full !aspect-[4/5] object-cover overflow-hidden h-full"
-                    src="https://dlcdnwebimgs.asus.com/gain/CBECA40C-88C6-449A-956B-3C7A96CEB865/w750/h470"
-                  />
-                </CardBody>
-                <CardFooter className="text-small justify-between">
-                  <b>Notebook</b>
-                  <p className="text-default-500">ดูทั้งหมด</p>
-                </CardFooter>
-              </Card>
-            </Link>
-            {notebook.slice(0, 5).map((data) => (
-              <Link
-                className="snap-center snap-always mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2 "
-                href={`/${data.slug}`}
-                key={data.id}
-              >
-              </Link>
-            ))}
-          </div>
-        </Slide>
       </section>
 
-      <section className="mt-[70px]">
-        <div className="mb-5">
-          <Slide direction="right" duration={1500} triggerOnce>
-            <h1 className="text-2xl font-base">
-              <span className="text-primary font-bold">Printer</span> | คมชัด
-              ลื่นไหล ไม่มีสะดุด{" "}
-            </h1>
-          </Slide>
-        </div>
-        <Divider />
-        <Slide triggerOnce direction="up">
-          <div className="flex flex-nowrap  snap-x snap-mandatory   scroll-smooth overflow-x-scroll overflow-hidden   lg:grid grid-cols-12 pb-8 mt-10 gap-3  ">
-            <Link
-              className="snap-center snap-always mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
-              href={`/products?type=printer`}
-            >
-              <Card shadow="sm"  isPressable className="h-full w-full">
-                <CardBody className="overflow-visible p-0 ">
-                  <Image
-                    shadow="sm"
-                    radius="lg"
-                    width="100%"
-                    height="100%"
-                    alt="printer"
-                    className="!w-full  !aspect-[4/5] object-cover overflow-hidden h-full "
-                    src="https://cdn.thewirecutter.com/wp-content/media/2024/08/laserprinters-2048px-02603-2x1-1.jpg?width=2048&quality=75&crop=2:1&auto=webp"
-                  />
-                </CardBody>
-                <CardFooter className="text-small justify-between">
-                  <b>Printer</b>
-                  <p className="text-default-500">ดูทั้งหมด</p>
-                </CardFooter>
-              </Card>
-            </Link>
-            {printer.slice(0, 5).map((data) => (
-              <Link
-                className="snap-center snap-always mx-w-[350px] min-w-[180px] col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-2"
-                href={`/${data.slug}`}
-                key={data.id}
-              >
-         
-              </Link>
-            ))}
-          </div>
-        </Slide>
-      </section>
-
-      <section className="mt-20">
-        <Zoom triggerOnce>
-        <div className="text-center mb-20">
-          <h1
-            className={`${title({
-              color: "blue",
-            })} `}
+      {/* Lightbox */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 bg-black/95 z-50 p-4 flex items-center justify-center"
           >
-            ภาพรวม <span><h1
-              className={`${title({
-                color: "yellow",
-              })} !text-6xl `}
+            <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              className="relative max-w-7xl w-full"
             >
-              ROA
-            </h1> </span>
-             ทั้งหมด
-          </h1>
-        </div>
-        </Zoom>
-      </section>
-      <section className="mt-[150px]">
-          <div className="grid grid-cols-9 gap-7 pt-10">
-            <Slide triggerOnce direction="left" className="col-span-9 sm:col-span-3">
               <Image
-                src={
-                  "photo/Rent.png"
-                }
-                alt="Rent-Team"
-                width={500}
-                height={800}
-                className=" rounded-xl aspect-video !w-full !h-full overflowhidden object-cover hover:scale-110 transition-all"/>
-            </Slide>
-            <Slide triggerOnce direction="up" className="col-span-9 sm:col-span-3">
-              <Image
-                src={
-                  "https://img.freepik.com/free-vector/team-construction-workers-with-wind-turbines-solar-panels-installation-repair-electric-utility-poles-flat-vector-illustration-maintenance-service-electricity-renewable-energy-concept_74855-23179.jpg"
-                }
-                alt="Technical-Team"
-                width={500}
-                height={800}
-                className=" rounded-xl aspect-video !w-full !h-full overflowhidden object-cover hover:scale-110 transition-all"/>
-            </Slide>
-            <Slide triggerOnce direction="right" className="col-span-9 sm:col-span-3">
-              <Image
-              src={
-                "https://media.istockphoto.com/id/1158215759/vector/customer-service-man-with-headphones-and-microphone-with-laptop-concept-illustration-for.jpg?s=612x612&w=0&k=20&c=KpWRGQHt0sf_LzpSll7zI4manB-_15pQOnG89Js1Ftc="
-              }
-              alt="Install-team"
-              width={500}
-              height={800}
-              className=" rounded-xl aspect-video !w-full !h-full overflowhidden object-cover hover:scale-110 transition-all"/>
-            </Slide>
-          </div>
-      </section>
-      {/* <div >
-  <ParallaxSlide/>
-</div> */}
-      {/* <div className=" mb-8">
-        <iframe
-          className="w-full aspect-video rounded-2xl pointer-events-none "
-          src="https://www.youtube.com/embed/RRJbotw4g3w?controls=0&modestbranding=1&rel=0&autoplay=1&mute=1&disablekb=1&loop=1&playlist=RRJbotw4g3w,fmSmcSfC5fk"
-          title="2022 Nitro 5 | Gaming Laptop | Acer"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        ></iframe>
-      </div> */}
-      {/* <PhotoSlider/> */}
-      {/* <div className="flex flex-row gap-6">
-        <div className="flex-auto   rounded-2xl">
-          <EmblaCarousel
-            slides={SLIDES}
-            options={OPTIONS}
-            photo={promotion_photo}
-          />
-        </div>
-        <div className="flex-1 bg-primary-50 rounded-2xl "></div>
-      </div> */}
-    </>
+                src={selectedImage}
+                alt="Selected work"
+                className="w-full h-auto rounded-lg shadow-2xl"
+                width={1920}
+                height={1080}
+              />
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setSelectedImage(null);
+                }}
+                className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-3 hover:bg-black/70 transition-all"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
