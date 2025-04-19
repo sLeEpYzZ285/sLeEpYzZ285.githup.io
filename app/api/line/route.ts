@@ -59,11 +59,11 @@ function createFormattedMessage(formData: SurveyFormData, averageRating: string)
 - ความเป็นมิตร: ${formData.friendlinessRating}/5
 - การให้คำแนะนำ: ${formData.knowledgeRating}/5`;
 
-  if (formData.serviceType === 'printer_rental') {
-    message += `\n\n📌 ความต้องการเพิ่มเติม
-- ต้องการ Stock/Spare หมึก: ${formData.wantSpareStock ? '✅' : '❌'}
-- ต้องการข้อมูลการใช้งานรายเดือน: ${formData.wantMonthlyUpdate ? '✅' : '❌'}`;
-  }
+//   if (formData.serviceType === 'printer_rental') {
+//     message += `\n\n📌 ความต้องการเพิ่มเติม
+// - ต้องการ Stock/Spare หมึก: ${formData.wantSpareStock ? '✅' : '❌'}
+// - ต้องการข้อมูลการใช้งานรายเดือน: ${formData.wantMonthlyUpdate ? '✅' : '❌'}`;
+//   }
 
   if (formData.feedback) {
     message += `\n\n💬 ข้อเสนอแนะ:\n${formData.feedback}`;

@@ -138,7 +138,7 @@ export default function OurworkPage() {
         </Zoom>
       </section>
               <br/> <br/>
-      <section>
+      {/* <section>
       <Zoom triggerOnce duration={1000}>
             <div>
               <h1 className={title({ color: "yellow" })}>กิจกรรม</h1>
@@ -148,7 +148,7 @@ export default function OurworkPage() {
       </section>
       <section>
               <CardOurwork />
-      </section>
+      </section> */}
     </>
   );
 }

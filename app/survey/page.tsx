@@ -39,8 +39,8 @@ interface FormData {
   friendlinessRating: number;
   knowledgeRating: number;
   feedback: string;
-  wantSpareStock: boolean;
-  wantMonthlyUpdate: boolean;
+  // wantSpareStock: boolean;
+  // wantMonthlyUpdate: boolean;
 }
 
 const initialFormData: FormData = {
@@ -54,8 +54,8 @@ const initialFormData: FormData = {
   friendlinessRating: 0,
   knowledgeRating: 0,
   feedback: '',
-  wantSpareStock: false,
-  wantMonthlyUpdate: false
+  // wantSpareStock: false,
+  // wantMonthlyUpdate: false
 };
 
 export default function SurveyPage() {
@@ -144,13 +144,13 @@ export default function SurveyPage() {
                 </div>
               </div>
 
-              {formData.serviceType === 'printer_rental' && (
+              {/* {formData.serviceType === 'printer_rental' && (
                 <div>
                   <h4 className="font-semibold mb-2">ความต้องการเพิ่มเติม</h4>
                   <p>ต้องการ Stock/Spare หมึก: {formData.wantSpareStock ? 'ใช่' : 'ไม่ใช่'}</p>
                   <p>ต้องการข้อมูลการใช้งานรายเดือน: {formData.wantMonthlyUpdate ? 'ใช่' : 'ไม่ใช่'}</p>
                 </div>
-              )}
+              )} */}
 
               {formData.feedback && (
                 <div>
@@ -209,7 +209,7 @@ export default function SurveyPage() {
                     }
                   }}
                 >
-                  แชร์ทาง Line
+                  ส่งผลการประเมิน
                 </Button>
                </div>
             </>
@@ -364,7 +364,7 @@ export default function SurveyPage() {
                           </RadioGroup>
                         </div>
 
-                        {formData.serviceType === 'printer_rental' && (
+                        {/* {formData.serviceType === 'printer_rental' && (
                           <div className="space-y-4">
                             <Checkbox
                               isSelected={formData.wantSpareStock}
@@ -379,7 +379,7 @@ export default function SurveyPage() {
                               ต้องการข้อมูลการใช้งานปริ้นเตอร์รายเดือน
                             </Checkbox>
                           </div>
-                        )}
+                        )} */}
 
                         <Textarea
                           label="ข้อเสนอแนะ/ติชม"
